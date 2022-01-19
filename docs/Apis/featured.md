@@ -1,0 +1,5 @@
+---
+id: featured
+---
+
+# Featured People

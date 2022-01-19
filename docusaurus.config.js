@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CyberConnect',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'CyberConnect are super cool',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -37,7 +37,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'CyberConnect Docs',
+        title: 'CyberConnect Developer Center',
         logo: {
           alt: 'CyberConnect Logo',
           src: 'img/logo.png',
@@ -49,6 +49,24 @@ const config = {
             position: 'left',
             label: 'Introduction',
           },
+          {
+            type: 'doc',
+            docId: 'contact_us',
+            position: 'left', 
+            label: 'Integration',
+          },
+          {
+            type: 'doc',
+            docId: 'contact_us',
+            position: 'left',
+            label: 'Showcase',
+          },
+          {
+            type: 'doc',
+            docId: 'contact_us',
+            position: 'left',
+            label: 'Community',
+          },
           // {
           //   type: 'doc',
           //   docId: 'sdk',
@@ -56,8 +74,23 @@ const config = {
           //   label: 'SDK',
           // },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/cyberconnecthq',
+            label: 'Version',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/cyberconnecthq',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/cyberconnecthq',
+            label: 'Blog',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/cyberconnecthq',
+            label: 'Website',
             position: 'right',
           },
         ],

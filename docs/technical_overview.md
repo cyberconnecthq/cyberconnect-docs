@@ -1,0 +1,45 @@
+---
+id: tech_overview
+---
+
+# Technical Overview
+
+![](https://docs.cyberconnect.me/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FrmENnNNGJTMEVLNrveIJ%2Fuploads%2FgrR5ulG3yGacXnw6vm4P%2Fimage.png?alt=media&token=31a80a22-42ce-4040-b43a-27f3ad036146)
+
+## Storage
+
+At the heart of CyberConnect is a tamper-proof data structure that efficiently facilitates the creation, update, query, and verification of user-centric data.
+
+Each piece of user-centric data is represented as a data stream where the update is only allowed by the data owner. Each update to the data is appended to the data stream in the form of an append-only commit log and the resulting data structure becomes a hash linked data structure called a Merkle DAG. To provide data authenticity, we utilize dag-jose IPLD codec so that each piece of data, whether the creation file or the individual updates is signed and optionally encrypted by the data owner. Before appending a new commit to the data stream, an authorization check is performed to ensure that only the data owner could append new updates. After the custom IPLD encoding, the data is safely stored in IPFS to provide content addressed lookup and data integrity. By this design, each user's social graph is only modifiable by the user, readable to applications with proper decryption permission given by the user, and verifiable by the signature attached.
+
+We partner with Ceramic for our first release based on their implementation of such a mutable data stream storage system on top of IPFS. Further performance improvement will be achieved by writing a heavy data model.
+
+Data availability among nodes is achieved through libp2p pubsub so that as long as one node subscribed to the pubsub topic has the needed commit log, data will be available for query among all the nodes.
+
+Long-term data retention is guaranteed through Ceramic’s blockchain anchoring and our custom data pinning service.
+
+## Authentication and Authorization
+
+To fully give back ownership of user data, we have to first sort out authentication and authorization. The authentication of a user simply means that they are who they claim they are and is easily achieved by a signature using a user’s private key. The authorization of user data means that only the user has the access to write their own data and no other central party like Facebook could modify anyone’s data. Authorization is done with the help of pre-commit checks and dag-jose IPLD encoding to ensure correct signing after commit.
+
+Given these two requirements on authentication and authorization, we designed a safe keychain scheme for Authentication and Authorization based on a public-key system (asymmetric key pairs). Firstly, users should not sign any non-transactional data with their blockchain private key. Signing with a blockchain private key provides an extra hurdle to the user experience and broadens the attack surface. Thus, we need to generate key pairs with ed25519 curve from the entropy of a blockchain wallet signature on the client side. The private 
+
+key is generated inside a protected iframe and exposed to applications only through RPC to prevent xss attacks.
+The key pairs are then later encrypted with the user’s existing keychain private key (blockchain private key if keychain private key is not existent) and stored in the specific data stream for a keychain. The keychain data stream is authorized and protected through a key rotation scheme combined with blockchain anchoring to resolve conflicts.
+
+## User-centric user tables
+
+IPFS storage has a common centralization concern where CIDs are stored in a centralized server. This raises the problem of data authenticity where a central server could swap out the real user-created data with fake ones by changing the CID. As mentioned above, we do enforce data signature with dag-jose codec so that data authenticity is guaranteed.
+To look up a certain user’s social graph, we first need to look up the keychain of the user through their blockchain address. Then we could look up the user table through the keychain public key. In contrast to an application-centric design in web2, where each application stores some information about the user and information like name and avatar are duplicated across applications, in our design, a single user table for each user contains all the information needed and could be used across all applications. By putting all the social graph information inside one user table, only that user has the permission to update any data involved and only the parties that have been given the decryption key could read the data inside if encrypted.
+
+## Data indexer
+
+Similar to how thegraph indexes transactional data on Ethereum, all the social graph data on top of CyberConnect welcome data indexers. On CyberConnect, social graph data is stored as unilateral connections. For example, if Alice follows Bob, Alice would add Bob to her own following list. However, Alice could not modify Bob's follower list due to limited access. Thus, we only store the following list inside the user table but not a follower list. Any indexer could easily retrieve such following list and recover a counter-party follower list and provide such data for easier application queries. We would first rollout an indexer for the aforementioned follower list use case (stored in computed index) and welcome other interesting data indexing opportunities by the community. Any user with some technical skills could verify the validity of a computed index and a more sophisticated system involving slashing could be developed in the future.
+
+## Node
+
+A node must provide the following functionalities to maintain such a decentralized social graph.
+
+1. A Ceramic node including a custom IPFS daemon with dag-jose IPLD encoding. This handles all the keychain authenticated data stream creation and update. It also maintains the desired data availability through libp2p and IPFS data pinning service, and stream data consensus with blockchain anchoring.
+2. An RPC endpoint that exposes the data stream.
+3. A data indexer that provides reverse lookups and data aggregation. To generate a reverse “follower list” based on unidirectional following connection.
