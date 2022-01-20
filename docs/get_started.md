@@ -3,7 +3,7 @@ id: get_started
 ---
 # Get Started
 
-There are 3 ways for you to get integrated into CyberConnect: adding CyberConnect Button in HTML file, NPM module, and GraphQL api.
+There are 3 ways for you to get integrated into CyberConnect: adding CyberConnect Button in HTML file, NPM module, and our CyberConnect Indexer GraphQL api.
 
 
 ## CyberConnect Button

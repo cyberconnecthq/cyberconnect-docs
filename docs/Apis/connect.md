@@ -4,8 +4,6 @@ id: connect
 
 # Connect & Disconnect
 
-The JavaScript library provides two primary functions, **connect** and **disconnect**. The library encapsulates the complex authentication logic (authenticate to Ceramic Network) into easy-to-use functions. The source code can be found [here](https://github.com/cyberconnecthq/js-cyberconnect).
-
 ## User Flow
 
 In general, there are two steps needed from users to write connection data.
@@ -20,13 +18,7 @@ This step is needed **only** when its user's first action in the current session
 
 After user signed the first message, the library will generate a **derived signing key** stored in the memory for future safe interaction with Ceramic Network.
 
-## Installation
 
-```bash
-npm install @cyberlab/cyberconnect
-or
-yarn add @cyberlab/cyberconnect
-```
 
 ## Basic Usage
 

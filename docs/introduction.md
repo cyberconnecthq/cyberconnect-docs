@@ -3,7 +3,7 @@ sidebar_position: 1
 id: introduction
 ---
 
-# What is CyberConnect
+# Welcome to CyberConnect
 ## Protocol and Interface
 To begin, we should make clear the distinctions between the different areas of "CyberConnect", some of which may confuse new users.
 - CyberConnect Protocol: A suite of infrastructure and tools including decentralized identity (DID), data storage and data indexing service that together democratize social connections, a protocol that facilitates the formation of platformless, user-centralic social graph.

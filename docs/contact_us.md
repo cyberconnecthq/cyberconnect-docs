@@ -10,4 +10,4 @@ If you want to form partnerships with CyberConnect, feel free to contact CyberCo
 
 ## Suggestions
 
-For developing suggestions, please contact zhimao@cyberconnect.io
+For developing suggestions, please contact ryan@cyberconnect.io zhimao@cyberconnect.io or lynch@cybertinolab.com

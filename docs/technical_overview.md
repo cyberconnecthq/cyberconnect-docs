@@ -2,7 +2,7 @@
 id: tech_overview
 ---
 
-# Technical Overview
+# Technical Framework
 
 ![](https://docs.cyberconnect.me/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FrmENnNNGJTMEVLNrveIJ%2Fuploads%2FgrR5ulG3yGacXnw6vm4P%2Fimage.png?alt=media&token=31a80a22-42ce-4040-b43a-27f3ad036146)
 

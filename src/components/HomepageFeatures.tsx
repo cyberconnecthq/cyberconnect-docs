@@ -20,28 +20,25 @@ const FeatureList: FeatureItem[] = [
     image: '/img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        CyberConnect is super easy to use
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Build on best tech',
     image: '/img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        CyberConnect builds on IPFS, Ceramic and supports multiple blockchain networks.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Multiple Integration Ways',
     image: '/img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        We provide multiple ways for you to get integrated to our protocol
       </>
     ),
   },

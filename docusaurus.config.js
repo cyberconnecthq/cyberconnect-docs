@@ -51,33 +51,27 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'contact_us',
+            docId: 'get_started',
             position: 'left', 
             label: 'Integration',
           },
           {
             type: 'doc',
-            docId: 'contact_us',
+            docId: 'Partnership Examples/unipass',
             position: 'left',
             label: 'Showcase',
           },
           {
             type: 'doc',
-            docId: 'contact_us',
+            docId: 'Community/community',
             position: 'left',
             label: 'Community',
           },
           // {
-          //   type: 'doc',
-          //   docId: 'sdk',
-          //   position: 'left',
-          //   label: 'SDK',
+          //   href: 'https://github.com/cyberconnecthq',
+          //   label: 'Version',
+          //   position: 'right',
           // },
-          {
-            href: 'https://github.com/cyberconnecthq',
-            label: 'Version',
-            position: 'right',
-          },
           {
             href: 'https://github.com/cyberconnecthq',
             label: 'GitHub',
@@ -89,7 +83,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/cyberconnecthq',
+            href: 'https://cyberconnect.me/',
             label: 'Website',
             position: 'right',
           },

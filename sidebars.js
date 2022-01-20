@@ -18,34 +18,76 @@ const sidebars = {
 
   // But you can create a sidebar manually
 
-  tutorialSidebar: [
+  introductionSidebar: [
     {
       type: 'doc',
       id: 'introduction',
     },
     {
+      type: 'category',
+      label: 'Ideology',
+      items: [
+        {
+          type: 'doc',
+          id: 'Ideology/what_is',
+        },
+        {
+          type: 'doc',
+          id: 'Ideology/what_isnt',
+        },
+        {
+          type: 'doc',
+          id: 'Ideology/why_user',
+        },
+        {
+          type: 'doc',
+          id: 'Ideology/why_dev',
+        },
+        {
+          type: 'doc',
+          id: 'Ideology/what_build',
+        },
+        {
+          type: 'doc',
+          id: 'Ideology/what_not_build',
+        },
+      ]
+    }
+  ],
+  integrationSidebar: [
+    {
       type: 'doc',
       id: 'get_started',
     },
     {
-      type: 'doc',
-      id: 'tech_overview',
-    },
-    {
       type: 'category',
-      label: 'Integration',
+      label: 'SDK Integration',
       items: [
         {
           type: 'doc',
-          id: 'Apis/following_list',
+          id: 'Apis/installation',
+        },
+        {
+          type: 'doc',
+          id: 'Apis/connect',
         },
         {
           type: 'doc',
           id: 'Apis/follow_button',
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Indexer API',
+      items: [
         {
           type: 'doc',
-          id: 'Apis/connect',
+          id: 'Apis/about_indexer'
+        },
+        {
+          type: 'doc',
+          id: 'Apis/following_list',
         },
         {
           type: 'doc',
@@ -63,11 +105,17 @@ const sidebars = {
           type: 'doc',
           id: 'Apis/playground',
         },
-      ],
+      ]
     },
     {
+      type: 'doc',
+      id: 'tech_overview',
+    },
+  ],
+  showcaseSidebar: [
+    {
       type: 'category',
-      label: 'Partnership Examples',
+      label: 'Partnerships',
       items: [
         {
           type: 'doc',
@@ -117,6 +165,8 @@ const sidebars = {
         },
       ],
     },
+  ],
+  communitySidebar: [
     {
       type: 'category',
       label: 'Community',
@@ -128,26 +178,18 @@ const sidebars = {
         {
           type: 'doc',
           id: 'Community/past_events',
-        }
+        },
+        
       ]
+    },
+    {
+      type: 'doc',
+      id: 'resources',
     },
     {
       type: 'doc',
       id: 'contact_us',
     },
-
-  ],
-  introductionSidebar: [
-
-  ],
-  integrationSidebar: [
-
-  ],
-  showcaseSidebar: [
-
-  ],
-  communitySidebar: [
-    
   ]
    
 };
