@@ -15,6 +15,6 @@ You can get an address' follower & following list, get recommendation & featured
 If you are not familiar with GraphQL(we understand a lot of our community developers only use REST API before), you may checkout this [GraphQL Official Site](https://graphql.org/) for 
 introduction. 
 
-You can also join our discord group and ask for help in "developer" channel. CyberConnect is a global dev team and we will offer you best tech support 7-24. :)
+You can also join our discord group and ask for help in "developer" channel. CyberConnect is a global dev team and we will offer you best tech support 7-24!
 
 :::
