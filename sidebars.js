@@ -119,6 +119,10 @@ const sidebars = {
       items: [
         {
           type: 'doc',
+          id: 'Partnership Examples/galaxy',
+        },
+        {
+          type: 'doc',
           id: 'Partnership Examples/unipass',
         },
         {
