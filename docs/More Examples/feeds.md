@@ -4,10 +4,4 @@ id: feeds
 
 # CyberConnect in Decentralized Feeds
 
-CyberConnect naturally works perfect with decentralized feeds applications.
-
-The follow buttons enable users to get the latest updates from friends. Decentralized feeds application can receive varies of contents, posted by different addresses. 
-
-User can also add more connections through well-integrated, open-box CyberConnect Follow Button. One more line of code from CyberConnect library, making infinite possibility.
-
-Also, users can send invitations, share a news, article or video to their friends through CyberConnect list. 
+Integration between CyberConnect and decentralized feeds is intuitive and organic. Users can see content posted by their friends on CyberConnect, and follow other users based on content. Users can also send invitations and share content across different platforms through their portable CyberConnect friends list. With our recommendation system, users are also able to get cutomized people, content, and comunities recommended to them, thereby helping them explore feeds that they would have not otherwise engaged with. 
