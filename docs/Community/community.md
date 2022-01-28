@@ -1,17 +1,13 @@
 ---
 id: community
 ---
-# CyberConnect Community
+# CyberConnect Developer Community
 
-CyberConnect is building up a global-scaled developer community. We welcome and appreciate every member, every contribution on our 
-path to building an open, decentralized, user-owned social ecosystem. 
+CyberConnect as a protocol is built _with_ and _for_ developers. 
+We are building a global-scale developer community. We welcome everyone to build with us and appreciate every piece of contribution to help build an open, decentralized, user-centric Web3 Social ecosystem. 
 
-Currently, we operate our social account also on platforms like Twitter, Discord, etc. If you are a developer, you are  
-welcome to join our discord Hackathon / Developer Channels. There is 24-hour technical support from professional developers of CyberConnect's global offices.
-Also, you can keep up with our latest updates by following our offcial Twitter account at the following link. 
+Come and join our vibrant [Discord community here](https://cyberconnect.fyi/discord). You will find specific Hackathon/Developer Channels. And there will be 24/7 tech support by top developers from CyberConnect's global offices. Join the disucssion, talk to us at our regular community calls, and never miss any community initiatives.
 
-Excitedly awaiting you to join our community soon!
+To keep updated, also subscribe to our [newsletter](https://www.getrevue.co/profile/cyberconnect), check out our [Mirror](https://cyberconnect.fyi/mirror), and follow us on [Twitter](https://twitter.com/CyberConnectHQ).
 
-- [https://twitter.com/CyberConnectHQ](https://twitter.com/CyberConnectHQ)
-- [https://discord.com/invite/bYJ3cB7bbC](https://cyberconnect.fyi/discord)
-- [https://cyberconnect.me/](https://cyberconnect.me/)
+We look forward to seeing you!
