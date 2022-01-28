@@ -71,7 +71,7 @@ Initialize a CyberConnect instance by:
 ```js
 const cyberConnect = new CyberConnect({
         ethProvider: ethProvider,     // provider from web3js or ethers.js or other 
-        namesÏpace: 'CyberConnect',   // or what you want
+        namespace: 'CyberConnect',   // or what you want
         env:'PRODUCTION',                   // or 'STAGING' in dev environment
       });
 ```
