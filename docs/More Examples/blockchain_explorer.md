@@ -4,6 +4,6 @@ id: blockchain_explorer
 
 # CyberConnect in Blockchain Explorer
 
-Since the born of Ethereum, the need of blockchain explorer exists. The blockchain explorer can integrate CyberConnect with its recommendation API, backed by delicate recommendation algorithm and huge user-provoked following action dataset.
+Since the birth of Ethereum, the need for a blockchain explorer has existed. Blockchain explorer can integrate CyberConnect with its recommendation API, backed by deliberate recommendation algorithm and an extensive user-initiated following action dataset. 
 
-When a viewer of the blockchain explorer search for an address, he can get target related address profile, actions and trading history. So it can form a chain of searching actions. User can know more about the target address.
+When a viewer of the blockchain explorer searches for an address, he/she can get target address's profile, actions, and trading history. Thus, a chain of search actions is formed. #这一段是想表达什么？不太懂

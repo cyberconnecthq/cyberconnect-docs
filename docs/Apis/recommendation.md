@@ -6,7 +6,7 @@ id: recommendation
 
 Stand Alone Complex is the recommendation algorithm aggregating connection data from open data sources such as Ethereum blockchain, Foundation.app, Rarible, and so on. The algorithm will generate a customized recommended addresses to follow list for every address.
 
-The name Stand Alone Complex comes from a Japanese anime , representing a phenomenon where unrelated, yet very similar actions of individuals create a seemingly concerted effort.
+The name Stand Alone Complex comes from a Japanese anime, representing a phenomenon where unrelated yet very similar actions of individuals create a seemingly concerted effort.
 
 **Example query**
 

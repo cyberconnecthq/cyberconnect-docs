@@ -8,15 +8,15 @@ id: connect
 
 In general, there are two steps needed from users to write connection data.
 
-**1.Initialize action**
+**1. Initialize action**
 
-The user start by clicking the follow/unfollow button in the website, it **should** invoke **connect** function in the JavaScript library.
+The user starts by clicking the follow/unfollow button on the website, it **should** invoke **connect** function in the JavaScript library.
 
 **2. Sign MetaMask message**
 
-This step is needed **only** when its user's first action in the current session. The user doesn't need to sign MetaMask message again for the following actions. 
+This step is needed **only** when it's user's first action in the current session. The user doesn't need to sign MetaMask message again for the following actions. 
 
-After user signed the first message, the library will generate a **derived signing key** stored in the memory for future safe interaction with Ceramic Network.
+After user signed the first message, the library will generate a **derived signing key** stored in the memory for the safety of future interactions with Ceramic Network.
 
 
 
