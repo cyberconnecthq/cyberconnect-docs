@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Build on best tech',
+    title: 'Build on Best Tech',
     image: '/img/undraw_docusaurus_tree.svg',
     description: (
       <>

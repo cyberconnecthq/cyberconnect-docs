@@ -20,6 +20,6 @@ A social graph is an address book that maps social relations between individuals
 Social graphs come in different forms - some examples include Facebook’s friend list, Twitter’s follower list, mobile phone’s contacts list, etc. Social graphs are a powerful means to position an individual in a complex network of connections, organizations, and affiliations, all of which combined define his/her social existence. 
 
 
-### How does CyberConnect protocol compare to a social network
+### How does CyberConnect Protocol Compare to a Social Network
  
 The protocol is implemented as a set of persistent, non-upgradable smart contracts; designed to prioritize censorship resistance, security, self-custody, and to function without any trusted intermediaries who may selectively restrict access.
