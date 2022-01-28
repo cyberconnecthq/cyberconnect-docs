@@ -21,9 +21,5 @@ Social graphs come in different forms - some examples include Facebook’s frien
 
 
 ### How does CyberConnect protocol compare to a social network
-这一段是想讲什么内容？not sure what this is trying to convey. 
-
-People never get to 
-
-
-exchanging cryptocurrencies (ERC-20 Tokens) on the Ethereum blockchain. The protocol is implemented as a set of persistent, non-upgradable smart contracts; designed to prioritize censorship resistance, security, self-custody, and to function without any trusted intermediaries who may selectively restrict access.
+ 
+The protocol is implemented as a set of persistent, non-upgradable smart contracts; designed to prioritize censorship resistance, security, self-custody, and to function without any trusted intermediaries who may selectively restrict access.
