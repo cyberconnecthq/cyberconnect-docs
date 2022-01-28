@@ -13,5 +13,5 @@ Also, you can keep up with our latest updates by following our offcial Twitter a
 Excitedly awaiting you to join our community soon!
 
 - [https://twitter.com/CyberConnectHQ](https://twitter.com/CyberConnectHQ)
-- [https://discord.com/invite/bYJ3cB7bbC](https://discord.com/invite/bYJ3cB7bbC)
+- [https://discord.com/invite/bYJ3cB7bbC](https://cyberconnect.fyi/discord)
 - [https://cyberconnect.me/](https://cyberconnect.me/)

@@ -78,11 +78,6 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/cyberconnecthq',
-            label: 'Blog',
-            position: 'right',
-          },
-          {
             href: 'https://cyberconnect.me/',
             label: 'Website',
             position: 'right',
@@ -105,16 +100,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://cyberconnect.fyi/discord',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/CyberConnectHQ',
               },
             ],
           },
@@ -123,7 +114,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/cyberconnecthq',
               },
             ],
           },
