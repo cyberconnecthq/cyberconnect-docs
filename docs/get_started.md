@@ -6,53 +6,7 @@ id: get_started
 There are 3 ways for you to get integrated with CyberConnect: adding CyberConnect Button in HTML file, NPM module, and through our CyberConnect Indexer GraphQL api.
 
 
-## CyberConnect Button
-
-First, you need to include [cyberconnect-follow-button.min.js](https://connect.cybertino.io/js/cyberconnect-follow-button.min.js) script.
-
-Then, you can call `follow.init` after the script loaded.
-
-```js
-<script>
-async function initCyberConnect() {
-    await capi.follow.init({
-        ethProvider: ethProvider, // ethProvider is an Ethereum provider
-	namespace: 'CyberConnect',
-	env: 'PRODUCTION' // env decides the endpoints. Now we have STAGING and PRODUCTION. The default value is PRODUCTION
-    });
-</script>
-<script src="https://connect.cybertino.io/js/cyberconnect-follow-button.min.js" defer onload="initCyberConnect"></script>
-```
-
-Third, to create a follow button, add an `div` element to contain a button `id` and call `follow.render` with the button `id` and the target wallet address
-
-```html
-<body>
-  <div id="follow-button"></div>
-  <script>
-    capi.follow.render("follow-button", {
-      toAddr: "xxx",
-      onSuccess: (event) => {
-        console.log(event);
-      },
-      onFailure: (event) => {
-        console.log(event);
-      },
-    });
-  </script>
-</body>
-```
-
-<b>Button Style:</b>
-* Follow:
-  * Normal:
-
-    ![](https://user-images.githubusercontent.com/17503721/143494393-d397246e-0901-4026-aa8a-666515ad6cc5.png)
-  * Hover:
-
-    ![](https://user-images.githubusercontent.com/17503721/143494572-598b1e0a-9c76-4f61-83d0-f25e589ef66e.png)
-
-## NPM module
+## CyberConnect SDK
 
 **Installation**
 
@@ -99,7 +53,7 @@ try{
 
 ```
 
-## GraphQL API
+## Indexer GraphQL API
 
 Through CyberConnect GraphQL apis, you can get target address' identity, recommend addresses, featured addresses and many other info. 
 
@@ -186,4 +140,50 @@ Please be sure to use https://api.cybertino.io/connect/ as URL in the playground
 :::
 
 
+
+## CyberConnect Button
+
+First, you need to include [cyberconnect-follow-button.min.js](https://connect.cybertino.io/js/cyberconnect-follow-button.min.js) script.
+
+Then, you can call `follow.init` after the script loaded.
+
+```js
+<script>
+async function initCyberConnect() {
+    await capi.follow.init({
+        ethProvider: ethProvider, // ethProvider is an Ethereum provider
+	namespace: 'CyberConnect',
+	env: 'PRODUCTION' // env decides the endpoints. Now we have STAGING and PRODUCTION. The default value is PRODUCTION
+    });
+</script>
+<script src="https://connect.cybertino.io/js/cyberconnect-follow-button.min.js" defer onload="initCyberConnect"></script>
+```
+
+Third, to create a follow button, add an `div` element to contain a button `id` and call `follow.render` with the button `id` and the target wallet address
+
+```html
+<body>
+  <div id="follow-button"></div>
+  <script>
+    capi.follow.render("follow-button", {
+      toAddr: "xxx",
+      onSuccess: (event) => {
+        console.log(event);
+      },
+      onFailure: (event) => {
+        console.log(event);
+      },
+    });
+  </script>
+</body>
+```
+
+<b>Button Style:</b>
+* Follow:
+  * Normal:
+
+    ![](https://user-images.githubusercontent.com/17503721/143494393-d397246e-0901-4026-aa8a-666515ad6cc5.png)
+  * Hover:
+
+    ![](https://user-images.githubusercontent.com/17503721/143494572-598b1e0a-9c76-4f61-83d0-f25e589ef66e.png)
 
