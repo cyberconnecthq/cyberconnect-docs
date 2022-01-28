@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/introduction">
-            CyberConnect Tutorial - 5min ⏱️
+            CyberConnect Introduction - 5min ⏱️
           </Link>
         </div>
       </div>
