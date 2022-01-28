@@ -3,7 +3,7 @@ id: get_started
 ---
 # Get Started
 
-There are 3 ways for you to get integrated with CyberConnect: adding CyberConnect Button in HTML file, NPM module, and through our CyberConnect Indexer GraphQL api.
+There are 3 ways for you to get integrated with CyberConnect: adding CyberConnect Button in HTML file, NPM module, and through our CyberConnect Indexer GraphQL API.
 
 
 ## CyberConnect SDK
@@ -55,7 +55,7 @@ try{
 
 ## Indexer GraphQL API
 
-Through CyberConnect GraphQL apis, you can get target address' identity, recommend addresses, featured addresses and many other info. 
+Through CyberConnect GraphQL APIs, you can get target address' identity, recommended addresses, featured addresses, and many other info. 
 
 We take identity query as an example:
 
@@ -131,11 +131,11 @@ You can retrieve the info like this:
 }
 ```
 
-You can try our api in playground: [CyberConnect GraphQL Playground](https://api.cybertino.io/connect/graphiql)
+You can try our API in our playground: [CyberConnect GraphQL Playground](https://api.cybertino.io/connect/graphiql)
 
 :::caution
 
-Please be sure to use https://api.cybertino.io/connect/ as URL in the playground
+Please be sure to use https://api.cybertino.io/connect/ as the URL in the playground
 
 :::
 
@@ -159,7 +159,7 @@ async function initCyberConnect() {
 <script src="https://connect.cybertino.io/js/cyberconnect-follow-button.min.js" defer onload="initCyberConnect"></script>
 ```
 
-Third, to create a follow button, add an `div` element to contain a button `id` and call `follow.render` with the button `id` and the target wallet address
+Thirdly, to create a follow button, add an `div` element to contain a button `id` and call `follow.render` with the button `id` and the target wallet address
 
 ```html
 <body>
