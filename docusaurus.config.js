@@ -119,7 +119,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} CyberConnect, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} CyberLabs`,
       },
       prism: {
         theme: lightCodeTheme,
