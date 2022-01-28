@@ -21,9 +21,9 @@ An easy way to explore the CyberConnect API is to use your browser to access the
 **Example query**
 
 ```graphql
-query {
-  identity(address:"0x7C04786F04c522ca664Bb8b6804E0d182eec505F") {
-    ens
+query IdentityQuery{
+  identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+    domain
   }
 }
 ```
@@ -34,7 +34,7 @@ query {
 {
   "data": {
     "identity": {
-      "ens": "1890.eth"
+      "domain": "cyberlab.eth"
     }
   }
 }
