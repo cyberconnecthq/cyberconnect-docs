@@ -8,7 +8,7 @@ The core part of CyberConnect Protocol does not include providing specific servi
 
 However, for early stage development, CyberConnect team set up indexers that implement CyberConnect Protocol, which thus help early community developers get easily onboarded to the community. 
 
-You can get an address' follower & following list, get recommendations of second-degree connections, & featured people list through our indexer GraphQL api.
+You can get an address' follower & following list, get recommendations of second-degree connections through our indexer GraphQL api.
 
 :::info
 

@@ -2,7 +2,7 @@
 id: recommendation
 ---
 
-# Recommendation List
+# Recommendation
 
 Stand Alone Complex is the recommendation algorithm aggregating connection data from open data sources such as Ethereum blockchain, Foundation.app, Rarible, and so on. The algorithm will generate a customized recommended addresses to follow list for every address.
 

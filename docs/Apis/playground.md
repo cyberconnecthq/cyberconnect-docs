@@ -10,7 +10,11 @@ You can access the API through a variety of interfaces that support GraphQL. Bel
 
 Playground: https://api.cybertino.io/connect/graphiql
 
-please be sure to use https://api.cybertino.io/connect/ as URL in the playground
+:::caution
+
+Please be sure to use https://api.cybertino.io/connect/ as URL in the playground
+
+:::
 
 An easy way to explore the CyberConnect API is to use your browser to access the GraphiQL interface served directly on the endpoint address. GraphiQL is an interactive interface where you can construct mutations and queries alongside easy access to the API's schema. 
 
