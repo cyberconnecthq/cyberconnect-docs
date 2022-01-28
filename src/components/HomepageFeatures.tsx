@@ -16,29 +16,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Self-Sovereign',
     image: '/img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        CyberConnect is super easy to use
+        We return the ownership and utilities of social graph data back to users. Only users should have autonomy over how, where, and for what their data is used. 
       </>
     ),
   },
   {
-    title: 'Build on Best Tech',
+    title: 'Blockchain Agnostic',
     image: '/img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        CyberConnect builds on IPFS, Ceramic and supports multiple blockchain networks.
+        Our protocol is designed to be open. Not tied to any single blockchain, the protocol is created for a multi-blockchain ecosystem.
       </>
     ),
   },
   {
-    title: 'Multiple Integration Ways',
+    title: 'Portable',
     image: '/img/undraw_docusaurus_react.svg',
     description: (
       <>
-        We provide multiple ways for you to get integrated to our protocol
+        Interoperability is key to a truly open web. We empower everyone to travel between apps with their own social graph as part of their Web3 identity.
       </>
     ),
   },
