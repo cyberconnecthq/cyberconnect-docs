@@ -4,6 +4,4 @@ id: chat
 
 # CyberConnect in Chat Applications
 
-Using CyberConnect can ease the process of building a decentralized chat application. Cold starts always kill a lot of emerging chat application. But with CyberConnect, developers can easily integrate and access the contents of users' friend lists.
-
-CyberConnect will surely help lots of Web3 chat application!
+CyberConnect allows for an easier process of building decentralized chat applications. Cold starts are prone to impede the growth of emerging chat applications due to the lack of users thus "friends" to chat with. Leveraging CyberConnect, developers can easily integrate and access the contents of users' friends lists, thereby incentivizing users to stay and engage with the app. 
