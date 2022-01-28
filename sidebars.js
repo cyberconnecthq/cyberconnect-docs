@@ -95,14 +95,6 @@ const sidebars = {
         },
         {
           type: 'doc',
-          id: 'Apis/featured',
-        },
-        {
-          type: 'doc',
-          id: 'Apis/popular',
-        },
-        {
-          type: 'doc',
           id: 'Apis/playground',
         },
       ]
