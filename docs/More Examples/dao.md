@@ -6,7 +6,7 @@ id: dao
 
 The decentralized autonomous organization (DAO) is a system created by developers who share the same goal and composed by rules that are not singlehandedly decided by a central party. At the moment, DAOs lack native relationships and communication tools. Members may find it difficult to form and view connections within the DAO, which hinders efficiency of DAOs. 
 
-With CyberConnect, DAO members can establish and display friendships in a more holistic way. Members can garner a friends list and see profiles of each of their friends, including information like their credentials, memberships, past votes, etc. The votes from CyberConnected friends give a sense of group thinking. DAO members can also discuss their opinions through CyberChat (a CyberConnect-based, decentralized dm application) or other decentralized chat application. For now, they could only use Discord or other Web2 chat tools for such demands. #我们不是不做cyberchat了咩 
+With CyberConnect, DAO members can establish and display friendships in a more holistic way. Members can garner a friends list and see profiles of each of their friends, including information like their credentials, memberships, past votes, etc. Particularly, the votes from CyberConnected friends give a sense of group thinking. 
 
 A potential use case design is shown below. Users can see a friend's notes for voting before they start to read the contents of the vote, and hence have more information to leverage toward voting. Also, they can check both general votes and friends' votes for reference. 
 
