@@ -24,7 +24,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/cyberconnecthq/cyberconnect-docs',
+          editUrl: 'https://github.com/cyberconnecthq/cyberconnect-docs/tree/dev',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
