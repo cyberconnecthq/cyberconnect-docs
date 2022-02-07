@@ -23,6 +23,57 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+html[data-theme='light'] {
+  --ifm-color-primary: #000;
+  --ifm-color-primary-inverse: #fff;
+}
+
+html[data-theme='dark'] {
+  --ifm-color-primary: #fff;
+  --ifm-color-primary-inverse: #000;
+}
+
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='light'] .navbar{
+  background-color: #FAFAFA;
+  color: var(--ifm-color-primary);
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .navbar {
+  background-color: var(--ifm-color-primary-inverse);
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme='light'] .main-wrapper  .hero{
+  background-color: var(--ifm-color-primary-inverse);
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .main-wrapper  .hero{
+  background-color: #191919;
+  color: var(--ifm-color-primary);
+}
+
+.main-wrapper  .hero .container div .button{
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-inverse);
+  border-radius: 100px;
+}
+
+
+.footer  {
+  background-color: var(--ifm-color-primary-inverse);
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme='light'] .footer .container .row .col .footer__title{
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .footer .container .footer_title, .footer__link-item {
+  color: var(--ifm-color-primary)
 }

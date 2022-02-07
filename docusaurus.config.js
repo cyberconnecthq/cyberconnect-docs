@@ -41,6 +41,7 @@ const config = {
         logo: {
           alt: 'CyberConnect Logo',
           src: 'img/logo.png',
+          srcDark: 'img/dark-mode-logo.png'
         },
         items: [
           {
