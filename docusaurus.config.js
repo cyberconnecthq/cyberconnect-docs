@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CyberConnect',
-  tagline: 'Building the social graph protocol for Web3',
+  tagline: 'Building the composable social graph protocol for Web3',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -120,7 +120,6 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} CyberLabs`,
       },
       prism: {
         theme: lightCodeTheme,

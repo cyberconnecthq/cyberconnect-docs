@@ -39,12 +39,21 @@ const FeatureList: FeatureItem[] = [
       </>
     ),
   },
+  {
+    title: 'Composable',
+    description: (
+        <>
+          Tap into social graph data with one click. Build upon it with agility for quick iterations.
+          Fast forward bootstrapping. Build experiences not walls.
+        </>
+    ),
+  },
 ];
 
 function Feature({title, image, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center padding-horiz--md">
+    <div className={clsx('col col--3')}>
+      <div className="text--left padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>

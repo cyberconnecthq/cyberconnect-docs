@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;900&display=swap');
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -14,6 +15,7 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+  --ifm-font-family-homepage: Outfit;
 }
 
 .docusaurus-highlight-code-line {
@@ -48,20 +50,20 @@ html[data-theme='dark'] .navbar {
   color: var(--ifm-color-primary);
 }
 
-html[data-theme='light'] .main-wrapper  .hero{
+.main-wrapper  .hero{
   background-color: var(--ifm-color-primary-inverse);
   color: var(--ifm-color-primary);
 }
 
-html[data-theme='dark'] .main-wrapper  .hero{
-  background-color: #191919;
-  color: var(--ifm-color-primary);
+.main-wrapper  .hero .container .hero__title {
+  width: 45rem;
+  margin: 0 auto 54px;
 }
-
-.main-wrapper  .hero .container div .button{
+.main-wrapper .hero .container div .button{
   background-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary-inverse);
   border-radius: 100px;
+  font-family: var(--ifm-font-family-homepage);
 }
 
 
@@ -71,9 +73,16 @@ html[data-theme='dark'] .main-wrapper  .hero{
 }
 
 html[data-theme='light'] .footer .container .row .col .footer__title{
+  font-family: var(--ifm-font-family-homepage);
   color: var(--ifm-color-primary);
 }
 
 html[data-theme='dark'] .footer .container .footer_title, .footer__link-item {
+  font-family: var(--ifm-font-family-homepage);
   color: var(--ifm-color-primary)
+}
+.navbar,
+.homepage .hero .container .hero__title, .homepage main section .container .row .col .text--left h3,
+.homepage main section .container .row .col .text--left p {
+  font-family: var(--ifm-font-family-homepage);
 }

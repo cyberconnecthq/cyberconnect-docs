@@ -11,8 +11,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title">{siteConfig.tagline}</h1>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -31,10 +30,12 @@ export default function Home(): JSX.Element {
     <Layout
       title={`${siteConfig.title} Docs`}
       description="Technical Documentation For CyberConnect Protocol">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+        <div className='homepage'>
+            <HomepageHeader />
+            <main>
+              <HomepageFeatures />
+            </main>
+        </div>
     </Layout>
   );
 }
