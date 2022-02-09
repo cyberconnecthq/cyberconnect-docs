@@ -59,10 +59,7 @@ const sidebars = {
       type: 'doc',
       id: 'get_started',
     },
-    {
-      type: 'doc',
-      id: 'tech_overview',
-    },
+    
     {
       type: 'category',
       label: 'Javascript SDK',
@@ -111,6 +108,10 @@ const sidebars = {
     {
       type: 'doc',
       id: 'Apis/follow_button',
+    },
+    {
+      type: 'doc',
+      id: 'tech_overview',
     },
 
   ],

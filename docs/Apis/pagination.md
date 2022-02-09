@@ -4,19 +4,14 @@ id: pagination
 
 # Pagination
 
-Pagination is a feature in CyberConnect Indexer endpoints. Pagination refers to methods for programatically requesting all of the pages, in order to retrieve the whole result data set. Not all API endpoints support pagination, but it is often used when result sets are large. 
+Pagination is a feature in CyberConnect Indexer endpoints. Pagination refers to methods for programmatically requesting all of the pages, in order to retrieve the whole result data set. Not all API endpoints support pagination, but it is often used when result sets are large. 
 
-Users can retrieve lists from CyberConnect Indexer by using `first` and `after` parameters. The `first` request parameter enable you configure the number of entries returned per response page. The `after` request parameter points to the end of the page of data that has been returned. They are quite similar to `limit` and `offset` in MySQL query pagination. 
+Users can retrieve lists from CyberConnect Indexer by using `first` and `after` parameters. The `first` request parameter enable you configure the number of entries returned per response page. The default value of `first` parameter is 20 and the maximum value is 50. The `after` request parameter points to the end of the page of data that has been returned. 
 
 :::info
-
 Please note that you should set `after` as "-1" for the first query of full elements since the index of an array starts from zero.
-
 :::
 
-The default value of `first` parameter is 20 and the maximum value is 50.
-
-If you are querying a data set with more than 50 entries, you need to implement querying with pagination. 
 
 All CyberConnect Indexer endpoints with pagination return a `BasicInfoConnection` object with two fields:
 
