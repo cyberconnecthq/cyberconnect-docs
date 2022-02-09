@@ -2,24 +2,20 @@
 id: recommendation
 ---
 
-# Recommendation
+# Get Recommendation
 
-Recommendation API is to give more possible connections to users to build. If you search for one address' recommendations, it will return a list of addresses that either have already followed or been followed by the searched address on other platforms, or have the same followers with the searched address. 
+We’ve built a recommendation index into our protocol for general follow suggestions.
 
-We use an algorithm called Stand Alone Complex to build our recommendation system.
+The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized “recommended addresses to follow” list for every address. 
 
-## Stand Alone Complex
-
-Stand Alone Complex is the recommendation algorithm aggregating connection data from open data sources such as Ethereum blockchain, Foundation.app, Rarible, and so on. The algorithm will generate a customized recommended addresses to follow list for every address.
-
-The name Stand Alone Complex comes from a Japanese anime, representing a phenomenon where unrelated yet very similar actions of individuals create a seemingly concerted effort.
+Recommendation API is to give more possible connections to users to build. It will return a list of addresses that either have already followed or been followed by the searched address on other platforms, or have the same followers with the searched address. 
 
 ## Definition
 
  The definition of Recommendation query is:
 
  ```graphql
-recommendations ( address String!, filter RecommFilter, network Network, first Int, after String ) RecommendationResponse!
+recommendations (address String!, filter RecommFilter, network Network, first Int, after String) RecommendationResponse!
  ```
 
 For input params:

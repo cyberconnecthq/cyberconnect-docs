@@ -60,8 +60,12 @@ const sidebars = {
       id: 'get_started',
     },
     {
+      type: 'doc',
+      id: 'tech_overview',
+    },
+    {
       type: 'category',
-      label: 'SDK Integration',
+      label: 'Javascript SDK',
       items: [
         {
           type: 'doc',
@@ -71,15 +75,12 @@ const sidebars = {
           type: 'doc',
           id: 'Apis/connect',
         },
-        {
-          type: 'doc',
-          id: 'Apis/follow_button',
-        },
+
       ],
     },
     {
       type: 'category',
-      label: 'Indexer API',
+      label: 'GraphQL Indexer',
       items: [
         {
           type: 'doc',
@@ -87,11 +88,19 @@ const sidebars = {
         },
         {
           type: 'doc',
-          id: 'Apis/following_list',
+          id: 'Apis/identity',
         },
         {
           type: 'doc',
           id: 'Apis/recommendation',
+        },
+        {
+          type: 'doc',
+          id: 'Apis/namespace',
+        },
+        {
+          type: 'doc',
+          id: 'Apis/pagination',
         },
         {
           type: 'doc',
@@ -101,8 +110,9 @@ const sidebars = {
     },
     {
       type: 'doc',
-      id: 'tech_overview',
+      id: 'Apis/follow_button',
     },
+
   ],
   showcaseSidebar: [
     {
@@ -186,7 +196,8 @@ const sidebars = {
       type: 'doc',
       id: 'contact_us',
     },
-  ]
+  ],
+  ...require("./docs/GraphQL/sidebar-schema"),
    
 };
 

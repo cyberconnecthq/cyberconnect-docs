@@ -1,19 +1,19 @@
 ---
-id: following_list
+id: identity
 ---
 
-# Identity
+# Get Identity
 
 Identity API is used for query information about an address on blockchain network. You can retrieve an address's domain name, indexed following & followers list using the following GraphQL query.
-## Definition
+## Structure
 
-The definition of Identity query is:
+The general pattern of Identity query is:
 ```graphql
-identity ( address String!, network Network ) UserIdentity!
+identity(address String!, network Network) UserIdentity!
 ```
 
-* `address`: the string of the address that you query for.
-* `network`: the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network.
+* `address` String: the string of the address that you query for.
+* `network` Network: the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network.
 
 With correct input, you can retrive a `UserIdentity` object with following fields:
  
@@ -23,13 +23,13 @@ With correct input, you can retrive a `UserIdentity` object with following field
 * `social` Social - user's social account, like Twitter
 * `avatar` String - user's avatar url
 * `joinTime` String - the time of user's first sent transaction on the given blockchain network
-* `followerCount` ( namespace String ) Int - how many followers does the user have for the given network and namespace
-* `followingCount` ( namespace String ) Int - how many followings does the user have for the given network and namespace
-* `followings` ( namespace String, first Int, after String ) BasicInfoConnection - list of user's followings
-* `followers` ( namespace String, first Int, after String ) BasicInfoConnection - list of user's followers
-* `friends` ( namespace String, first Int, after String ) BasicInfoConnection - list of user's friends (mutually followed)
+* `followerCount` Int - how many followers does the user have for the given network and namespace
+* `followingCount` Int - how many followings does the user have for the given network and namespace
+* `followings` BasicInfoConnection - list of user's followings
+* `followers` BasicInfoConnection - list of user's followers
+* `friends` BasicInfoConnection - list of user's friends (mutually followed)
 
-## Field Query
+## Simple Field Query
 
 One of the advantages of using GraphQL is that, you can customize the query, selecting the fields based on what you need. For example, if you only need to query one address' ENS, you can run:
 
@@ -55,40 +55,11 @@ and you will get:
 
 You can also use `social`, `avatar`, or other fields to get different information about an account. 
 
-## Followers, Followings, Friends Lists
+## Retrieve Follower, Following, Friend Lists 
 
-### Concept of Namespace
-
-CyberConnect is a protocol used for address connections of different networks, applications. In order to get the follower, following, friend list of an address, you need to specify `namespace` variable. 
-
-The default namespace is `CyberConnect`, which is provided and maintained by CyberConnect team. The official site of CyberConnect use this namespace and hence there are a lot of existed connections in this namespace. 
-
-If you are an individual developer, and you want to use the data from a big social connection network, this could be a good choice. If your application needs a new and independent network, you can use CyberConnect SDK to append new connections and use the indexer to query with your namespace. 
-
-### Pagination
-
-For pagination, we use `first` and `after` parameters. It's very similar to `limit` and `offset` in MySQL query pagination, but you should set `after` as "-1" for the beginning since the index of an array starts from zero.
-
-The default value of `first` variable is 20 and the maximum value is 50.
-
-If you are querying someone with more than 50 members of the given type, you need to implement querying with pagination. 
-
-All three types of list will return a `BasicInfoConnection` object with fields:
-
-* `pageInfo`
-* `list`
-
-For `pageInfo`, there are 4 fields:
-
-* `startCursor`: A String variable, meaning what is starting index of this query
-* `endCursor`: A String variable, meaning what is ending index of this query
-* `hasNextPage`: A Boolean variable, meaning whether there is more data to query
-* `hasPreviousPage`: A Boolean variable, meaning whether there is data previously
-
-For your query with pagination, it can be a for-loop begins with `first` as 50, and `after` as "-1" (please notice it's a string variable), and then add `after` by the batch size you set again and again, until `hasNextPage` turns into false.
+In order to get lists from an address, you need 
 
 ### Followers Example
-
 
 We can use this snippet for address' follower list query:
 ```graphql
