@@ -37,7 +37,7 @@ There are 5 fields in `list` variable:
 * `domain` String - the string of recommended address' domain name
 * `avatar` String - the url string of recommended address' avatar
 * `recommendationReason` String - the reason why we recommend this address
-* followerCount Int - the number of recommended address' followers
+* `followerCount Int` - the number of recommended address' followers
 
 
 ## Example 
