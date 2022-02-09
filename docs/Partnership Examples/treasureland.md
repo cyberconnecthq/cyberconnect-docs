@@ -4,8 +4,8 @@ id: treasureland
 
 # Treasureland
 
-Treasureland is a multi-chain NFT aggregation protocol that supports NFT mint, issuance, auction, and socialization. It aims to connect NFT creators, users, and consumers in a decentralized way, building the eBay of the blockchain world.
+Treasureland is a cross-chain NFT platform for NFT issuance, NFT trading, NFT collections and tailored in-shop services. It provides a one-stop solution to business-end users from 0 to 1 and a multichain aggregation experience to C-end users.
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FF7jRWxIzybTcOZu4ciPh%2Fuploads%2FpJCnDT9NwieXzEYoAU2o%2Fimage-20220113133216134.png?alt=media&token=1c3c69be-150f-42dd-883e-57870099f121)
 
-Treasureland also use CyberConnect's following relationship. With more contents, users can explore and get inspired by what NFT their friends purchased, sold.
+Treasureland leverages CyberConnect’s connection data, including following and followers, to build their own social graph, allowing users to establish profiles and connections on Treasureland.  
