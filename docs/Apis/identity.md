@@ -61,7 +61,7 @@ You can also use `social`, `avatar`, or other fields to get different informatio
 
 Follower, Following, Friend are endpoints that implemented with pagination. In order to get the whole data set of an address, you need to make requests page by page with correct namespace and pagination method. 
 
-For detail, please check [Namespace](./Apis/namespace) and [Pagination](./Apis/pagination) page.
+For detail, please check [Namespace](./namespace) and [Pagination](./pagination) page.
 
 ### Followers Example
 
