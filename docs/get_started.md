@@ -3,34 +3,52 @@ id: get_started
 ---
 # Get Started
 
-There are 3 ways for you to get integrated with CyberConnect: adding CyberConnect Button in HTML file, NPM module, and through our CyberConnect Indexer GraphQL API.
+CyberConnect offers three ways to get integrated: querying CyberConnect Indexer GraphQL endpoints, embedding a CyberConnect Button or using CyberConnect JavaScript SDK. In this article, we will use CyberConnect JavaScript SDK for demonstration. 
 
+For details of all three ways of integration, please check [JavaScript SDK](./Apis/installation), [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect Button](./Apis/follow_button) sections.
 
-## CyberConnect SDK
+## CyberConnect JavaScript SDK
 
-**Installation**
+### Installation
+
+Before start, please make sure [NodeJS](https://nodejs.org/en/) has been installed on your computer.
+
+```bash
+node --version
+```
+
+In the terminal, create a new folder, initialize a npm module and create a JS file.
+
+```bash
+mkdir CyberConnect && cd CyberConnect
+npm init -y
+touch index.js
+```
 
 To install and save CyberConnect dependency, simply run:
 
 ```bash
 npm install --save @cyberlab/cyberconnect
-
-# you can also use yarn if you prefer it
-
+# Or, you can also use yarn if you prefer
 yarn add @cyberlab/cyberconnect
 ```
+### Initialization
 
-Initialize a CyberConnect instance by:
+Import CyberConnect package and initialize a CyberConnect instance by:
 
 ```js
+import CyberConnect from '@cyberlab/cyberconnect'
+
 const cyberConnect = new CyberConnect({
         ethProvider: ethProvider,     // provider from web3js or ethers.js or other 
-        namespace: 'CyberConnect',   // or what you want
+        namespace: '',   // or what you want
         env:'PRODUCTION',                   // or 'STAGING' in dev environment
       });
 ```
 
-**Follow and unfollow**
+For how to get an ethProvider, please check official tutorial from [Web3JS](https://web3js.readthedocs.io/en/v1.7.0/) or [EthersJS](https://docs.ethers.io/v5/).
+
+### Follow and Unfollow
 
 You can add following or unfollow somebody by: 
 
@@ -53,137 +71,8 @@ try{
 
 ```
 
-## Indexer GraphQL API
+That should do it! You have finished a quick integration with CyberConnect SDK. If you encounter any issue, you can join our discord, raise your question in Developer channel. 
 
-Through CyberConnect GraphQL APIs, you can get target address' identity, recommended addresses, featured addresses, and many other info. 
+### Next Step
 
-We take identity query as an example:
-
-```graphql
-query IdentityQuery{
-  identity(address: "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"){
-    address
-    ens
-    social {
-      twitter
-    } 
-    followerCount(namespace: "CyberConnect")
-    followingCount(namespace: "CyberConnect")
-    followings {
-      list {
-        address
-        ens
-        alias
-        namespace
-        lastModifiedTime
-      }
-    }
-    followers {
-      list {
-        address
-        ens
-        alias
-        namespace
-        lastModifiedTime
-      }
-    } 
-  }
-}
-```
-
-You can retrieve the info like this:
-
-```json
-{
-  "data": {
-    "identity": {
-      "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-      "ens": "vitalik.eth",
-      "social": {
-        "twitter": ""
-      },
-      "followerCount": 10143,
-      "followingCount": 0,
-      "followings": {
-        "list": []
-      },
-      "followers": {
-        "list": [
-          {
-            "address": "0x00000035e82c83792df6def4de690fc87908c076",
-            "ens": "",
-            "alias": "",
-            "namespace": "CyberConnect",
-            "lastModifiedTime": "2021-12-13T09:44:08Z"
-          },
-          ...
-          {
-            "address": "0x006ff65bf0e549db61c85854db18ca47d80f541c",
-            "ens": "",
-            "alias": "",
-            "namespace": "CyberConnect",
-            "lastModifiedTime": "2021-12-24T07:05:04Z"
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-You can try our API in our playground: [CyberConnect GraphQL Playground](https://api.cybertino.io/connect/graphiql)
-
-:::caution
-
-Please be sure to use https://api.cybertino.io/connect/ as the URL in the playground
-
-:::
-
-
-
-## CyberConnect Button
-
-First, you need to include [cyberconnect-follow-button.min.js](https://connect.cybertino.io/js/cyberconnect-follow-button.min.js) script.
-
-Then, you can call `follow.init` after the script loaded.
-
-```js
-<script>
-async function initCyberConnect() {
-    await capi.follow.init({
-        ethProvider: ethProvider, // ethProvider is an Ethereum provider
-	namespace: 'CyberConnect',
-	env: 'PRODUCTION' // env decides the endpoints. Now we have STAGING and PRODUCTION. The default value is PRODUCTION
-    });
-</script>
-<script src="https://connect.cybertino.io/js/cyberconnect-follow-button.min.js" defer onload="initCyberConnect"></script>
-```
-
-Thirdly, to create a follow button, add an `div` element to contain a button `id` and call `follow.render` with the button `id` and the target wallet address
-
-```html
-<body>
-  <div id="follow-button"></div>
-  <script>
-    capi.follow.render("follow-button", {
-      toAddr: "xxx",
-      onSuccess: (event) => {
-        console.log(event);
-      },
-      onFailure: (event) => {
-        console.log(event);
-      },
-    });
-  </script>
-</body>
-```
-
-<b>Button Style:</b>
-* Follow:
-  * Normal:
-
-    ![](https://user-images.githubusercontent.com/17503721/143494393-d397246e-0901-4026-aa8a-666515ad6cc5.png)
-  * Hover:
-
-    ![](https://user-images.githubusercontent.com/17503721/143494572-598b1e0a-9c76-4f61-83d0-f25e589ef66e.png)
-
+Your next step can be to continue reading [CyberConnect Indexer Tutorial](./Apis/about_indexer). You can fetch the list of followers and following through indexers GraphQL APIs. 

@@ -29,9 +29,9 @@ With correct input, you can retrive a `UserIdentity` object with following field
 * `followers` BasicInfoConnection - list of user's followers
 * `friends` BasicInfoConnection - list of user's friends (mutually followed)
 
-## Simple Field Query
+## Simple Field Query Example
 
-One of the advantages of using GraphQL is that, you can customize the query, selecting the fields based on what you need. For example, if you only need to query one address' ENS, you can run:
+If you only need to query one address' ENS, you can run:
 
 ```graphql
 query QueryForENS{

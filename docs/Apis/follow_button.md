@@ -2,7 +2,7 @@
 id: follow_button
 ---
 
-# Follow Button
+# CyberConnect Button
 
 Embedding a follow button on your website is a quick and easy way to follow/unfollow other people on the given namespace. Let's start.
 
