@@ -18,11 +18,15 @@ All CyberConnect Indexer endpoints with pagination return a `BasicInfoConnection
 * `pageInfo`
 * `list`
 
-`list` is result for this single query. For `pageInfo`, there are 4 fields:
+`list` is result for this single query. 
 
-* `startCursor`: Starting index of this query
-* `endCursor`: Ending index of this query
-* `hasNextPage`: A boolean variable indicating whether the next page of data exists
-* `hasPreviousPage`: A boolean variable indicating whether this query is the first page of data
+For `pageInfo`, there are 4 fields:
+
+| Field             | Type    | Description                                             |
+|-------------------|---------|---------------------------------------------------------|
+| `startCursor`     | String  | Starting element index of this query                    |
+| `endCursor`       | String  | Ending element index of this query                      |
+| `hasNextPage`     | Boolean | Indicating whether the next page of data exists         |
+| `hasPreviousPage` | Boolean | Indicating whether this query is the first page of data |
 
 For your pagination query, it can be a series of queries begins with `first` as 50, and `after` as "-1" (please notice it's a string variable), and then increase `after` parameter by the batch size you set progressively, until `hasNextPage` returned by the server turns into false.

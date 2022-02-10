@@ -17,19 +17,21 @@ identity(address String!, network Network) UserIdentity!
 
 With correct input, you can retrive a `UserIdentity` object with following fields:
  
-* `address` String - the address that you are querying
-* `domain` String - primary ENS domain or Solana domain of the address 
-* `ens` String - ENS Domain of the address (DEPRECATED:ens is deprecated. Use domain instead.)
-* `social` Social - user's social account, like Twitter
-* `avatar` String - user's avatar url
-* `joinTime` String - the time of user's first sent transaction on the given blockchain network
-* `followerCount` Int - how many followers does the user have for the given network and namespace
-* `followingCount` Int - how many followings does the user have for the given network and namespace
-* `followings` BasicInfoConnection - list of user's followings
-* `followers` BasicInfoConnection - list of user's followers
-* `friends` BasicInfoConnection - list of user's friends (mutually followed)
+| Field            | Type                | Description                                                                   |
+|------------------|---------------------|-------------------------------------------------------------------------------|
+| `address`        | String              | The address that you are querying                                             |
+| `domain`         | String              | Primary ENS domain or Solana domain of the address                            |
+| `ens`            | String              | ENS Domain of the address (DEPRECATED:ens is deprecated. Use domain instead.) |
+| `social`         | Social              | User's social account, like Twitter                                           |
+| `avatar`         | String              | User's avatar url                                                             |
+| `joinTime`       | String              | The time of user's first sent transaction on the given blockchain network     |
+| `followerCount`  | Int                 | How many followers does the user have for the given network and namespace     |
+| `followingCount` | Int                 | How many followings does the user have for the given network and namespace    |
+| `followings`     | BasicInfoConnection | List of user's followings                                                     |
+| `followers`      | BasicInfoConnection | List of user's followers                                                      |
+| `friends`        | BasicInfoConnection | List of user's friends (mutually followed)                                    |
 
-## Simple Field Query Example
+## Retrieve Single Field
 
 If you only need to query one address' ENS, you can run:
 
@@ -57,7 +59,9 @@ You can also use `social`, `avatar`, or other fields to get different informatio
 
 ## Retrieve Follower, Following, Friend Lists 
 
-In order to get lists from an address, you need 
+Follower, Following, Friend are endpoints that implemented with pagination. In order to get the whole data set of an address, you need to make requests page by page with correct namespace and pagination method. 
+
+For detail, please check [Namespace](./Apis/namespace) and [Pagination](./Apis/pagination) page.
 
 ### Followers Example
 
@@ -114,7 +118,8 @@ We can get a json result like this:
 }
 ```
 
-## Full Example
+## Retrieve All Fields
+### Full Example
 
 You can use tools in "Playground" page to Identity API. Open the page, make sure the url is correct, copy and paste the following block of query into the input.
 

@@ -4,7 +4,7 @@ id: recommendation
 
 # Get Recommendation
 
-We’ve built a recommendation index into our protocol for general follow suggestions.
+We’ve built a recommendation index into our protocol for general following suggestions.
 
 The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized “recommended addresses to follow” list for every address. 
 
@@ -19,11 +19,14 @@ recommendations (address String!, filter RecommFilter, network Network, first In
  ```
 
 For input params:
-* `address` String - the address that you want to get recommendations from
-* `filter` Enum - type of connection filter. Currently only support `SOCIAL`
-* `network`: the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network.
-* `first` Int - the number of entries should this query return, default is `20` and the maximum value is `50`
-* `after` String - after which index should this query begin, default is `"-1"`
+
+| Field     | Type    | Description                                                                                                      |
+|-----------|---------|------------------------------------------------------------------------------------------------------------------|
+| `address` | String  | The address that you want to get recommendations from                                                            |
+| `filter`  | Enum    | Type of connection filter. Currently only support `SOCIAL`                                                       |
+| `network` | Network | The blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
+| `first`   | Int     | The number of entries should this query return, default is `20` and the maximum value is `50`                    |
+| `after`   | String  | After which index should this query begin, default is `"-1"`                                                     |
 
 For `first` and `after` usage, please refer to Pagination Section from Identity API page.
 
@@ -33,11 +36,13 @@ For returning fields, "SUCCESS" means you have made a successful request and can
 
 There are 5 fields in `list` variable:
 
-* `address` String - the string of recommended address
-* `domain` String - the string of recommended address' domain name
-* `avatar` String - the url string of recommended address' avatar
-* `recommendationReason` String - the reason why we recommend this address
-* `followerCount Int` - the number of recommended address' followers
+| Field                  | Type   | Description                                    |
+|------------------------|--------|------------------------------------------------|
+| `address`              | String | The string of recommended address              |
+| `domain`               | String | The string of recommended address' domain name |
+| `avatar`               | String | The url string of recommended address' avatar  |
+| `recommendationReason` | String | The reason why we recommend this address       |
+| `followerCount`        | Int    | The number of recommended address' followers   |
 
 
 ## Example 
