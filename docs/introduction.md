@@ -7,7 +7,7 @@ id: introduction
 
 ## Introduction
 
-The CyberConnect protocol is a peer-to-peer system designed for the creation and storage of user-centric, self-sovereign social graphs and identity on any blockchain. The protocol is implemented through a suite of components, including decentralized content computation, decentralized identity system, and a distributed indexing and query engine. All of these components are designed to prioritize censorship resistance, self-sovereignty, and are to be operated in a platformless, blockchain agnostic manner. 
+The CyberConnect protocol is a peer-to-peer system designed for the creation and storage of user-centric, self-sovereign social graphs and identities on any blockchain. The protocol is implemented through a suite of components, including decentralized content computation, a decentralized identity system, and a distributed indexing and query engine. All of these components are designed to prioritize censorship resistance, self-sovereignty, and are to be operated in a platformless, blockchain agnostic manner. 
 
 ## Protocol and Interface
 To begin, let’s define the difference between CyberConnect protocol and interface, which are two different offerings. The interface is what most users see and interact with, but it is not the entirety of CyberConnect.

@@ -6,7 +6,7 @@ id: what_isnt
 
 - Not a Profile Page. 
   
-  CyberConnect provides the necessary data standard, data availability guarantee, and developer tools for developers to build any apps that leverage a social network. [https://app.cyberconnect.me/](https://app.cyberconnect.me/) is only our first attempt of showing how this could be done with CyberConnect Protocol. 
+  CyberConnect provides the necessary data standard, data availability guarantee, and developer tools for developers to build any apps that leverage a social network. [https://app.cyberconnect.me/](https://app.cyberconnect.me/) is only our first attempt at showing how this could be done with CyberConnect Protocol. 
 
 - Not a Social Media Platform. 
 

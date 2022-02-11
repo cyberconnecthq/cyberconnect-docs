@@ -15,7 +15,7 @@ identity(address String!, network Network) UserIdentity!
 * `address` String: the string of the address that you query for.
 * `network` Network: the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network.
 
-With correct input, you can retrive a `UserIdentity` object with following fields:
+With correct input, you can retrieve a `UserIdentity` object with the following fields:
  
 | Field            | Type                | Description                                                                   |
 |------------------|---------------------|-------------------------------------------------------------------------------|
@@ -23,10 +23,10 @@ With correct input, you can retrive a `UserIdentity` object with following field
 | `domain`         | String              | Primary ENS domain or Solana domain of the address                            |
 | `ens`            | String              | ENS Domain of the address (DEPRECATED:ens is deprecated. Use domain instead.) |
 | `social`         | Social              | User's social account, like Twitter                                           |
-| `avatar`         | String              | User's avatar url                                                             |
+| `avatar`         | String              | User's avatar URL                                                             |
 | `joinTime`       | String              | The time of user's first sent transaction on the given blockchain network     |
-| `followerCount`  | Int                 | How many followers does the user have for the given network and namespace     |
-| `followingCount` | Int                 | How many followings does the user have for the given network and namespace    |
+| `followerCount`  | Int                 | How many followers do the user have for the given network and namespace     |
+| `followingCount` | Int                 | How many followings do the user have for the given network and namespace    |
 | `followings`     | BasicInfoConnection | List of user's followings                                                     |
 | `followers`      | BasicInfoConnection | List of user's followers                                                      |
 | `friends`        | BasicInfoConnection | List of user's friends (mutually followed)                                    |
@@ -59,7 +59,7 @@ You can also use `social`, `avatar`, or other fields to get different informatio
 
 ## Retrieve Follower, Following, Friend Lists 
 
-Follower, Following, Friend are endpoints that implemented with pagination. In order to get the whole data set of an address, you need to make requests page by page with correct namespace and pagination method. 
+Follower, Following, Friend are endpoints that are implemented with pagination. In order to get the whole data set of an address, you need to make requests page by page with the correct namespace and pagination input parameters. 
 
 For detail, please check [Namespace](./namespace) and [Pagination](./pagination) page.
 
@@ -121,7 +121,7 @@ We can get a json result like this:
 ## Retrieve All Fields
 ### Full Example
 
-You can use tools in "Playground" page to Identity API. Open the page, make sure the url is correct, copy and paste the following block of query into the input.
+You can use tools in "Playground" page to Identity API. Open the page, make sure the URL is correct, copy and paste the following query into the input.
 
 **Example Query for Ethereum**
 

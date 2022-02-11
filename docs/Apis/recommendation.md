@@ -8,7 +8,7 @@ We’ve built a recommendation index into our protocol for general following sug
 
 The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized “recommended addresses to follow” list for every address. 
 
-Recommendation API is to give more possible connections to users to build. It will return a list of addresses that either have already followed or been followed by the searched address on other platforms, or have the same followers with the searched address. 
+Recommendation API is to give more possible connections to users to build. It will return a list of addresses that either has already followed or been followed by the searched address on other platforms, or have the same followers with the searched address. 
 
 ## Definition
 
@@ -30,7 +30,7 @@ For input params:
 
 For `first` and `after` usage, please refer to Pagination Section from Identity API page.
 
-For returning fields, "SUCCESS" means you have made a successful request and can then use the data. You may see "INDEXING" for recommendation result if you put an address that has never been queried before. Our recommendation system will run in background to get the result prepared. So you can come back and check later.
+For returning fields, "SUCCESS" means you have made a successful request and can then use the data. You may see "INDEXING" for recommendation results if you put an address that has never been queried before. Our recommendation system will run in background to get the result prepared. So you can come back and check later.
 
 `pageInfo` is used to do pagination. Also, you can refer to Pagination Section from Identity API page for more details.
 

@@ -4,7 +4,7 @@ id: unipass
 
 # Unipass
 
-UniPass is multi-chain unified crypto identity, the carrier for the concept of ‘people’ in Metaverse. With UniPass’s unique Non-custodial Email-based Social Recovery solution, users can take full control of their crypto identity with a keyless experience. Users can also authenticate multi-chain addresses and even social accounts cryptographically, making their identity verifiable and more valuable.
+UniPass is a multi-chain unified crypto identity, the carrier for the concept of ‘people’ in Metaverse. With UniPass’s unique Non-custodial Email-based Social Recovery solution, users can take full control of their crypto identity with a keyless experience. Users can also authenticate multi-chain addresses and even social accounts cryptographically, making their identity verifiable and more valuable.
 
 ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FF7jRWxIzybTcOZu4ciPh%2Fuploads%2FTeKqSdnGgGTQ8OfbSNzx%2Fimage-20220113150111733.png?alt=media&token=c326cc7f-2a45-4987-a884-e6b9e901bf89)
 

@@ -47,7 +47,7 @@ Then, to create a follow button, add an `div` element to contain a button `id` a
 </body>
 ```
 
-When the button triggered, the callbacks will be called with the following event object:
+When the button is triggered, the callbacks will be called with the following event object:
 
 ```json
 onSuccess:
