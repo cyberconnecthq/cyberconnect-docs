@@ -12,8 +12,10 @@ The general pattern of Identity query is:
 identity(address String!, network Network) UserIdentity!
 ```
 
-* `address` String: the string of the address that you query for.
-* `network` Network: the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network.
+| Field     | Type    | Description                                                                                                      |
+|-----------|---------|------------------------------------------------------------------------------------------------------------------|
+| `address` | String  | the string of the address that you query for                                                                     |
+| `network` | Network | the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
 
 With correct input, you can retrieve a `UserIdentity` object with the following fields:
  
