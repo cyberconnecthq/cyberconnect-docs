@@ -3,11 +3,11 @@ id: get_started
 ---
 # Get Started
 
-CyberConnect offers three ways to get integrated: querying CyberConnect Indexer GraphQL endpoints, embedding a CyberConnect Button or using CyberConnect JavaScript SDK. In this article, we will use CyberConnect JavaScript SDK for demonstration. 
+CyberConnect offers three ways to integrate with: querying CyberConnect Indexer GraphQL endpoints, embedding a CyberConnect Button, or using CyberConnect JavaScript SDK. In this article, we will use CyberConnect JavaScript SDK for demonstration.
 
-In this article, we will go through CyberConnect integration ways by using the CyberConnect starter project. You can download, run and change the code freely from [Github repo](https://github.com/cyberconnecthq/cyberconnect-starter).
+In this article, we will go through the integration using the CyberConnect starter project. You can download, run and change the code freely from our [Github repo](https://github.com/cyberconnecthq/cyberconnect-starter).
 
-For details of all three ways of integration, please check [JavaScript SDK](./Apis/installation), [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect Button](./Apis/follow_button) sections.
+For details of all three integration methods, please check [JavaScript SDK](./Apis/installation), [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect Button](./Apis/follow_button) sections.
 
 ## CyberConnect Starter Project
 
@@ -43,7 +43,7 @@ The project directory should look like this:
 └──next.config.js
 ```
 
-All source files can be found in `src` folder. They are categorized into `components`, `context`, `pages` and `utils` folders depending on their types.
+All source files can be found in `src` folder. They are categorized into `components`, `context`, `pages` and `utils` folders according to their types.
 
 `styles` folder defines the global style of the project. `package.json` lists all dependencies of this project. `next.config.js` is the configuration file for Next framework. `public` folder hosts public assets of the project.
 
@@ -72,7 +72,7 @@ await cyberConnect.connect(searchInput);
 
 It will be executed when the correct format of address input is given, a follow button is clicked, and the user has the request signed.
 
-Querying the friend list is implemented by calling GraphQL apis. You can see the related code in `src/utils/query.ts`:
+Querying the friend list is implemented by calling GraphQL APIs. You can see the related code in `src/utils/query.ts`:
 
 ```js
 const resp = await handleQuery(schema, endPoint);
@@ -109,11 +109,11 @@ You will see a page where you can follow and unfollow new users, check your foll
 
 ![App](../static/img/tutorial/app.png)
 
-We use `cyberlab.eth` as demostration. Input the address `0x148d59faf10b52063071eddf4aaf63a395f2d41c` of `cyberlab.eth`, and click follow button. 
+We use `cyberlab.eth` for demostration. Input the address `0x148d59faf10b52063071eddf4aaf63a395f2d41c` of `cyberlab.eth`, and click follow button. 
 
 ![Follow Confirmation](../static/img/tutorial/confirm.png)
 
-After confirmation of signing operation, you can now have your first following on CyberConnect!
+After confirming the signing operation, you now have your first following on CyberConnect!
 
 ![First Following](../static/img/tutorial/first_following.png)
 
@@ -125,8 +125,8 @@ If you encounter any issue in the above section, you can join our discord, raise
 
 ## Conclusion and Next Step
 
-That's it!!👏👏👏  You have finished a quick integration with CyberConnect successfully! You can make more experiments and build your project on top of this starter project. 
+That's it!!👏👏👏  You just finished a quick integration with CyberConnect successfully! You can make more experiments and build your project on top of this starter project. 
 
-You can also visit CyberConnect [Main Site](https://app.cyberconnect.me). Basically, it uses the same implementation way as this starter project and has more interesting features. Invite your friends to follow each other on CyberConnect and join the CyberConnect developer community!
+You can also visit CyberConnect [Main Site](https://app.cyberconnect.me). Basically, it uses the same implementation way as this starter project and has more interesting features. Invite your friends to follow each other on CyberConnect and join the [CyberConnect developer community](https://discord.com/invite/bYJ3cB7bbC)!
 
-Your next step can be to continue reading about [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect SDK](./Apis/installation). You can fetch the list of followers and followings through indexers GraphQL APIs. 
+For the next steps, you can continue reading about [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect SDK](./Apis/installation). And you can also fetch the list of followers and followings through indexers GraphQL APIs.
