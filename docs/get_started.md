@@ -127,6 +127,6 @@ If you encounter any issue in the above section, you can join our discord, raise
 
 That's it!!👏👏👏  You have finished a quick integration with CyberConnect successfully! You can make more experiments and build your project on top of this starter project. 
 
-You can also visit CyberConnect [Main Site](app.cyberconnect.me). Basically, it uses the same implementation way as this starter project and has more interesting features. Invite your friends to follow each other on CyberConnect and join the CyberConnect developer community!
+You can also visit CyberConnect [Main Site](https://app.cyberconnect.me). Basically, it uses the same implementation way as this starter project and has more interesting features. Invite your friends to follow each other on CyberConnect and join the CyberConnect developer community!
 
 Your next step can be to continue reading about [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect SDK](./Apis/installation). You can fetch the list of followers and followings through indexers GraphQL APIs. 
