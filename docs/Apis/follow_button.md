@@ -2,17 +2,17 @@
 id: follow_button
 ---
 
-# Follow Button
+# CyberConnect Button
 
-Embedding a follow button on your website is a quick and easy way to follow/unfollow other people on the given namespace. Let's start.
+Embedding a follow button on your website is a quick and easy way to enable following/unfollowing in the given namespace. Let's begin.
 
-The CyberConnect follow button SDK for JavaScript doesn't have any standalone files that need to be downloaded or installed. Instead, you simply need to include a short piece of regular JavaScript in your HTML that will asynchronously load the SDK into your pages. The async load means that it does not block loading other elements of your page.
+The CyberConnect Follow Button SDK for JavaScript doesn't have any standalone files that need to be downloaded or installed. You simply need to add a short piece of regular JavaScript into your HTML that will asynchronously load the SDK into your pages. Async loading means that it does not block loading other elements of your page.
 
 The source code can be found [here](https://github.com/cyberconnecthq/follow-button).
 
 **Create a follow button**
 
-First you need to include the [cyberconnect-follow-button.min.js](https://connect.cybertino.io/js/cyberconnect-follow-button.min.js) script and call follow.init after the script loaded.
+First you need to include the [cyberconnect-follow-button.min.js](https://connect.cybertino.io/js/cyberconnect-follow-button.min.js) script and call follow.init after the script is loaded.
 
 ```js
 <script>
@@ -25,8 +25,6 @@ async function initCyberConnect() {
 </script>
 <script src="https://connect.cybertino.io/js/cyberconnect-follow-button.min.js" defer onload="initCyberConnect"></script>
 ```
-
-
 
 Then, to create a follow button, add an `div` element to contain a button `id` and call `follow.render` with the button `id` and the target wallet address
 
@@ -47,7 +45,7 @@ Then, to create a follow button, add an `div` element to contain a button `id` a
 </body>
 ```
 
-When the button triggered, the callbacks will be called with the following event object:
+When the button is triggered, the callbacks will be called with the following event object:
 
 ```json
 onSuccess:

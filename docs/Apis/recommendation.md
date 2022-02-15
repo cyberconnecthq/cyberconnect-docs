@@ -2,46 +2,44 @@
 id: recommendation
 ---
 
-# Recommendation
+# Get Recommendation
 
-Recommendation API is to give more possible connections to users to build. If you search for one address' recommendations, it will return a list of addresses that either have already followed or been followed by the searched address on other platforms, or have the same followers with the searched address. 
+We’ve built a recommendation index into our protocol for general follow suggestions. The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized “recommended addresses to follow” list for every address.
 
-We use an algorithm called Stand Alone Complex to build our recommendation system.
-
-## Stand Alone Complex
-
-Stand Alone Complex is the recommendation algorithm aggregating connection data from open data sources such as Ethereum blockchain, Foundation.app, Rarible, and so on. The algorithm will generate a customized recommended addresses to follow list for every address.
-
-The name Stand Alone Complex comes from a Japanese anime, representing a phenomenon where unrelated yet very similar actions of individuals create a seemingly concerted effort.
-
+The Recommendation API is to suggest such possible connections for users. It will return a list of addresses that a, have the same followers with the searched address, or, b, have already followed or been followed by the searched address on other platforms.
 ## Definition
 
  The definition of Recommendation query is:
 
  ```graphql
-recommendations ( address String!, filter RecommFilter, network Network, first Int, after String ) RecommendationResponse!
+recommendations (address String!, filter RecommFilter, network Network, first Int, after String) RecommendationResponse!
  ```
 
 For input params:
-* `address` String - the address that you want to get recommendations from
-* `filter` Enum - type of connection filter. Currently only support `SOCIAL`
-* `network`: the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network.
-* `first` Int - the number of entries should this query return, default is `20` and the maximum value is `50`
-* `after` String - after which index should this query begin, default is `"-1"`
 
-For `first` and `after` usage, please refer to Pagination Section from Identity API page.
+| Field     | Type    | Description                                                                                                      |
+|-----------|---------|------------------------------------------------------------------------------------------------------------------|
+| `address` | String  | The address that you want to get recommendations for                                                             |
+| `filter`  | Enum    | Type of connection filter. Currently only support `SOCIAL`                                                       |
+| `network` | Network | The blockchain network for the queried address. Default is `ETH`. you can also use `SOLANA` for Solana network.  |
+| `first`   | Int     | The number of entries this query should return, default is `20` and the maximum value is `50`                    |
+| `after`   | String  | After which index this query should begin, default is `"-1"`                                                     |
 
-For returning fields, "SUCCESS" means you have made a successful request and can then use the data. You may see "INDEXING" for recommendation result if you put an address that has never been queried before. Our recommendation system will run in background to get the result prepared. So you can come back and check later.
+For `first` and `after` usage, please refer to [Pagination](./pagination).
+
+For returning fields, "SUCCESS" means you have made a successful request and can then use the data. You may see "INDEXING" for recommendation results if you have put in an address that has never been queried before. In such a case, our recommendation system will run in the background to get the results prepared. You can come back to check later.
 
 `pageInfo` is used to do pagination. Also, you can refer to Pagination Section from Identity API page for more details.
 
-There are 5 fields in `list` variable:
+There are 5 fields for each object in `list`:
 
-* `address` String - the string of recommended address
-* `domain` String - the string of recommended address' domain name
-* `avatar` String - the url string of recommended address' avatar
-* `recommendationReason` String - the reason why we recommend this address
-* followerCount Int - the number of recommended address' followers
+| Field                  | Type   | Description                                    |
+|------------------------|--------|------------------------------------------------|
+| `address`              | String | The string of recommended address              |
+| `domain`               | String | The string of recommended address' domain name |
+| `avatar`               | String | The URL string of recommended address' avatar  |
+| `recommendationReason` | String | The reason why we recommend this address       |
+| `followerCount`        | Int    | The number of recommended address' followers   |
 
 
 ## Example 

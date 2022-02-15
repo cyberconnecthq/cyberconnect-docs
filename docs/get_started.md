@@ -3,187 +3,125 @@ id: get_started
 ---
 # Get Started
 
-There are 3 ways for you to get integrated with CyberConnect: adding CyberConnect Button in HTML file, NPM module, and through our CyberConnect Indexer GraphQL API.
+CyberConnect offers three ways to interact with: using CyberConnect JavaScript SDK, embedding a CyberConnect Button, and querying CyberConnect Indexer GraphQL endpoints. You can follow or unfollow one address through SDK or CyberConnect Button and query the result by Indexer endpoints.
 
+For details of three integration methods, please check [JavaScript SDK](./Apis/installation), [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect Button](./Apis/follow_button) sections.
 
-## CyberConnect SDK
+## CyberConnect Starter Project
 
-**Installation**
+We will go through the integration using the CyberConnect starter project. You can download, run and change the code freely from our [Github repo](https://github.com/cyberconnecthq/cyberconnect-starter).
 
-To install and save CyberConnect dependency, simply run:
+### Environment Setup
+
+Before starting, please make sure you have installed [NodeJS](https://nodejs.org/en/) and [MetaMask Chrome Extension](https://metamask.io/) on your computer.
 
 ```bash
-npm install --save @cyberlab/cyberconnect
-
-# you can also use yarn if you prefer it
-
-yarn add @cyberlab/cyberconnect
+node --version
 ```
 
-Initialize a CyberConnect instance by:
+In your terminal, clone the repo:
+
+```bash
+git clone git@github.com:cyberconnecthq/cyberconnect-starter.git
+cd cyberconnect-starter
+```
+The starter project is built based on [React](https://reactjs.org/), [Next.js](https://nextjs.org/). Once finished downloading, the project directory should look like this:
+
+```bash
+├──public
+├──src
+│   ├──components
+│   ├──context
+│   ├──pages
+│   └──utils
+├──styles
+├──package.json
+├──README.md
+├──... (many other files and folders)
+└──next.config.js
+```
+
+Source files can be found in `src` folder. They are categorized into `components`, `context`, `pages` and `utils` folders according to their types.
+
+### Installation and Run Locally
+
+In the `package.json`file, the dependencies that will be used for this demo are all well listed. You can simply run the following to install them.
+
+```bash
+npm install
+# Or, you can also use yarn if you prefer
+yarn
+```
+
+Next, we can run the project locally 
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+### Quick Intro to Code
+
+CyberConnect starter project uses CyberConnect JavaScript SDK to mutate connection status between addresses and CyberConnect Indexer GraphQL APIs to query.
+
+In `src/context/web3Context.tsx`, you can see how `cyberConnect` object is initialized:
 
 ```js
-const cyberConnect = new CyberConnect({
-        ethProvider: ethProvider,     // provider from web3js or ethers.js or other 
-        namespace: 'CyberConnect',   // or what you want
-        env:'PRODUCTION',                   // or 'STAGING' in dev environment
-      });
+const initCyberConnect = useCallback((provider: any) => {
+  const cyberConnect = new CyberConnect({
+    provider,
+    namespace: 'CyberConnect',
+  });
+
+  setCyberConnect(cyberConnect);
+}, []);
 ```
 
-**Follow and unfollow**
-
-You can add following or unfollow somebody by: 
+And writing the connection to the decentralized network only takes one line of code with CyberConnect SDK. In `src/pages/index.tsx`:
 
 ```js
-const addressToFollow = '0xxxxxxxxxx';
-
-// Follow
-try{
-    cyberConnect.connect(addressToFollow);
-}catch(e){
-    console.log(e)
-}
-
-// Unfollow
-try{
-    cyberConnect.disconnect(addressToFollow);
-}catch(e){
-    console.log(e)
-}
-
+await cyberConnect.connect(searchInput);
 ```
 
-## Indexer GraphQL API
+It will be executed when the correct format of address input is given, a follow button is clicked, and the user has the request signed.
 
-Through CyberConnect GraphQL APIs, you can get target address' identity, recommended addresses, featured addresses, and many other info. 
-
-We take identity query as an example:
-
-```graphql
-query IdentityQuery{
-  identity(address: "0xd8da6bf26964af9d7eed9e03e53415d37aa96045"){
-    address
-    ens
-    social {
-      twitter
-    } 
-    followerCount(namespace: "CyberConnect")
-    followingCount(namespace: "CyberConnect")
-    followings {
-      list {
-        address
-        ens
-        alias
-        namespace
-        lastModifiedTime
-      }
-    }
-    followers {
-      list {
-        address
-        ens
-        alias
-        namespace
-        lastModifiedTime
-      }
-    } 
-  }
-}
-```
-
-You can retrieve the info like this:
-
-```json
-{
-  "data": {
-    "identity": {
-      "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-      "ens": "vitalik.eth",
-      "social": {
-        "twitter": ""
-      },
-      "followerCount": 10143,
-      "followingCount": 0,
-      "followings": {
-        "list": []
-      },
-      "followers": {
-        "list": [
-          {
-            "address": "0x00000035e82c83792df6def4de690fc87908c076",
-            "ens": "",
-            "alias": "",
-            "namespace": "CyberConnect",
-            "lastModifiedTime": "2021-12-13T09:44:08Z"
-          },
-          ...
-          {
-            "address": "0x006ff65bf0e549db61c85854db18ca47d80f541c",
-            "ens": "",
-            "alias": "",
-            "namespace": "CyberConnect",
-            "lastModifiedTime": "2021-12-24T07:05:04Z"
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-You can try our API in our playground: [CyberConnect GraphQL Playground](https://api.cybertino.io/connect/graphiql)
-
-:::caution
-
-Please be sure to use https://api.cybertino.io/connect/ as the URL in the playground
-
-:::
-
-
-
-## CyberConnect Button
-
-First, you need to include [cyberconnect-follow-button.min.js](https://connect.cybertino.io/js/cyberconnect-follow-button.min.js) script.
-
-Then, you can call `follow.init` after the script loaded.
+Querying the friend list is implemented by calling GraphQL APIs. You can see the related code in `src/utils/query.ts`:
 
 ```js
-<script>
-async function initCyberConnect() {
-    await capi.follow.init({
-        ethProvider: ethProvider, // ethProvider is an Ethereum provider
-	namespace: 'CyberConnect',
-	env: 'PRODUCTION' // env decides the endpoints. Now we have STAGING and PRODUCTION. The default value is PRODUCTION
-    });
-</script>
-<script src="https://connect.cybertino.io/js/cyberconnect-follow-button.min.js" defer onload="initCyberConnect"></script>
+const resp = await handleQuery(schema, endPoint);
 ```
 
-Thirdly, to create a follow button, add an `div` element to contain a button `id` and call `follow.render` with the button `id` and the target wallet address
+### Explore the Project
 
-```html
-<body>
-  <div id="follow-button"></div>
-  <script>
-    capi.follow.render("follow-button", {
-      toAddr: "xxx",
-      onSuccess: (event) => {
-        console.log(event);
-      },
-      onFailure: (event) => {
-        console.log(event);
-      },
-    });
-  </script>
-</body>
-```
+Now, open the browser and set the URL as [http://localhost:3000](http://localhost:3000). You can see the project page:
 
-<b>Button Style:</b>
-* Follow:
-  * Normal:
+![Starter Project](../static/img/tutorial/starter_started.png)
 
-    ![](https://user-images.githubusercontent.com/17503721/143494393-d397246e-0901-4026-aa8a-666515ad6cc5.png)
-  * Hover:
+Click "CONNECT WALLET" button, and select the address that you want to use for this demo. Then, click "Next". 
 
-    ![](https://user-images.githubusercontent.com/17503721/143494572-598b1e0a-9c76-4f61-83d0-f25e589ef66e.png)
+![Wallet Connection](../static/img/tutorial/connect_wallet.png)
 
+You will see a page where you can follow and unfollow new users, check your follower and following list. 
+
+![App](../static/img/tutorial/app.png)
+
+We use `cyberlab.eth` for demonstration. Input the address `0x148d59faf10b52063071eddf4aaf63a395f2d41c` of `cyberlab.eth`, and click follow button. 
+
+![Input Box](../static/img/tutorial/input_box.png)
+
+A signature request from MetaMask will show up.
+
+![Follow Confirmation](../static/img/tutorial/confirm.png)
+
+After confirming the signing operation, you now have your first following on CyberConnect!
+
+![First Following](../static/img/tutorial/first_following.png)
+
+## Conclusion and Next Step
+
+That's it!!👏👏👏  You just finished a quick integration with CyberConnect successfully! You can make more experiments and build your project on top of this starter project. 
+
+You can also visit CyberConnect [Main Site](https://app.cyberconnect.me). Basically, it uses the same implementation way as this starter project and has more interesting features.
+
+For the next steps, you can continue reading about [CyberConnect Indexer](./Apis/about_indexer) and [CyberConnect SDK](./Apis/installation).

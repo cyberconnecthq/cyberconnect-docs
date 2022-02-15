@@ -1,37 +1,41 @@
 ---
-id: following_list
+id: identity
 ---
 
-# Identity
+# Get Identity
 
-Identity API is used for query information about an address on blockchain network. You can retrieve an address's domain name, indexed following & followers list using the following GraphQL query.
-## Definition
+Identity API is used for querying information about an address on the blockchain network. You can retrieve an address's domain name, indexed following & followers list using the GraphQL query shown below.
+## Structure
 
-The definition of Identity query is:
+The general pattern of Identity query is:
 ```graphql
-identity ( address String!, network Network ) UserIdentity!
+identity(address String!, network Network) UserIdentity!
 ```
 
-* `address`: the string of the address that you query for.
-* `network`: the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network.
+| Field     | Type    | Description                                                                                                      |
+|-----------|---------|------------------------------------------------------------------------------------------------------------------|
+| `address` | String  | the string of the address that you query for                                                                     |
+| `network` | Network | the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
 
-With correct input, you can retrive a `UserIdentity` object with following fields:
+With correct input, you can retrieve a `UserIdentity` object with the following fields:
  
-* `address` String - the address that you are querying
-* `domain` String - primary ENS domain or Solana domain of the address 
-* `ens` String - ENS Domain of the address (DEPRECATED:ens is deprecated. Use domain instead.)
-* `social` Social - user's social account, like Twitter
-* `avatar` String - user's avatar url
-* `joinTime` String - the time of user's first sent transaction on the given blockchain network
-* `followerCount` ( namespace String ) Int - how many followers does the user have for the given network and namespace
-* `followingCount` ( namespace String ) Int - how many followings does the user have for the given network and namespace
-* `followings` ( namespace String, first Int, after String ) BasicInfoConnection - list of user's followings
-* `followers` ( namespace String, first Int, after String ) BasicInfoConnection - list of user's followers
-* `friends` ( namespace String, first Int, after String ) BasicInfoConnection - list of user's friends (mutually followed)
+| Field            | Type                | Description                                                                   |
+|------------------|---------------------|-------------------------------------------------------------------------------|
+| `address`        | String              | The address that you are querying                                             |
+| `domain`         | String              | Primary ENS domain or Solana domain of the address                            |
+| `ens`            | String              | ENS Domain of the address (DEPRECATED:ens is deprecated. Use domain instead.) |
+| `social`         | Social              | User's social account, like Twitter                                           |
+| `avatar`         | String              | User's avatar URL                                                             |
+| `joinTime`       | String              | The time of user's first sent transaction on the given blockchain network     |
+| `followerCount`  | Int                 | How many followers do the user have for the given network and namespace     |
+| `followingCount` | Int                 | How many followings do the user have for the given network and namespace    |
+| `followings`     | BasicInfoConnection | List of user's followings                                                     |
+| `followers`      | BasicInfoConnection | List of user's followers                                                      |
+| `friends`        | BasicInfoConnection | List of user's friends (mutually followed)                                    |
 
-## Field Query
+## Retrieve Single Field
 
-One of the advantages of using GraphQL is that, you can customize the query, selecting the fields based on what you need. For example, if you only need to query one address' ENS, you can run:
+If you only need to query one address' ENS, you can run:
 
 ```graphql
 query QueryForENS{
@@ -55,40 +59,13 @@ and you will get:
 
 You can also use `social`, `avatar`, or other fields to get different information about an account. 
 
-## Followers, Followings, Friends Lists
+## Retrieve Follower, Following, Friend Lists 
 
-### Concept of Namespace
+Follower, Following, and Friend are endpoints that are implemented with pagination. In order to get the whole dataset of an address, you need to make requests page by page with the correct namespace and pagination input parameters.
 
-CyberConnect is a protocol used for address connections of different networks, applications. In order to get the follower, following, friend list of an address, you need to specify `namespace` variable. 
-
-The default namespace is `CyberConnect`, which is provided and maintained by CyberConnect team. The official site of CyberConnect use this namespace and hence there are a lot of existed connections in this namespace. 
-
-If you are an individual developer, and you want to use the data from a big social connection network, this could be a good choice. If your application needs a new and independent network, you can use CyberConnect SDK to append new connections and use the indexer to query with your namespace. 
-
-### Pagination
-
-For pagination, we use `first` and `after` parameters. It's very similar to `limit` and `offset` in MySQL query pagination, but you should set `after` as "-1" for the beginning since the index of an array starts from zero.
-
-The default value of `first` variable is 20 and the maximum value is 50.
-
-If you are querying someone with more than 50 members of the given type, you need to implement querying with pagination. 
-
-All three types of list will return a `BasicInfoConnection` object with fields:
-
-* `pageInfo`
-* `list`
-
-For `pageInfo`, there are 4 fields:
-
-* `startCursor`: A String variable, meaning what is starting index of this query
-* `endCursor`: A String variable, meaning what is ending index of this query
-* `hasNextPage`: A Boolean variable, meaning whether there is more data to query
-* `hasPreviousPage`: A Boolean variable, meaning whether there is data previously
-
-For your query with pagination, it can be a for-loop begins with `first` as 50, and `after` as "-1" (please notice it's a string variable), and then add `after` by the batch size you set again and again, until `hasNextPage` turns into false.
+For detail, please check [Namespace](./namespace) and [Pagination](./pagination) page.
 
 ### Followers Example
-
 
 We can use this snippet for address' follower list query:
 ```graphql
@@ -114,7 +91,7 @@ query FullIdentityQuery{
 }
 ```
 
-We can get a json result like this:
+We can get a JSON result like this:
 
 ```json
 {
@@ -143,9 +120,10 @@ We can get a json result like this:
 }
 ```
 
-## Full Example
+## Retrieve All Fields
+### Full Example
 
-You can use tools in "Playground" page to Identity API. Open the page, make sure the url is correct, copy and paste the following block of query into the input.
+You can try Identity API in the "Playground" page. Open the page, make sure the URL is correct, copy and paste the following query into the input.
 
 **Example Query for Ethereum**
 

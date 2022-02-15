@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'CyberConnect',
   tagline: 'Building the composable social graph protocol for Web3',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://doc.cyberconnect.me',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'CyberConnect', // Usually your GitHub org/user name.
+  projectName: 'CyberConnect Developer Center', // Usually your repo name.
 
   presets: [
     [
@@ -32,7 +32,21 @@ const config = {
       }),
     ],
   ],
-
+  plugins: [
+    [
+      require.resolve('@edno/docusaurus2-graphql-doc-generator'),
+      {
+        schema: "https://api.cybertino.io/connect/",
+        rootPath: "./docs",
+        baseURL: "GraphQL",
+        linkRoot: "/docs",
+        homepage: "./docs/graphql.md",
+        loaders: {
+          UrlLoader: "@graphql-tools/url-loader"
+        }
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -54,7 +68,13 @@ const config = {
             type: 'doc',
             docId: 'get_started',
             position: 'left', 
-            label: 'Integration',
+            label: 'Docs',
+          },
+          {
+            type: 'doc',
+            docId: 'GraphQL/graphql',
+            position: 'left',
+            label: 'API',
           },
           {
             type: 'doc',
@@ -125,6 +145,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      themeConfig: {
+        metadata: [
+          {name: 'og:title', content: 'CyberConnect Developer Center'}, 
+          {name: 'og:type', content: 'website'}, 
+          {name: 'og:url', content: 'https://docs.cyberconnect.me/'}, 
+          {name: 'og:image', content: 'https://cyberconnect.me/assets/logo-black.svg'}
+        ],
+      }
     }),
 };
 

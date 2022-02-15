@@ -8,17 +8,15 @@ id: connect
 
 In general, there are two steps needed from users to write connection data.
 
-**1. Initialize action**
+**1. Initiation Action**
 
 The user starts by clicking the follow/unfollow button on the website, it **should** invoke **connect** function in the JavaScript library.
 
-**2. Sign MetaMask message**
+**2. Sign MetaMask Message**
 
-This step is needed **only** when it's user's first action in the current session. The user doesn't need to sign MetaMask message again for the following actions. 
+This step is needed **only** when it's the user's first action in the current session. The user doesn't need to sign MetaMask message again for the following actions.
 
-After user signed the first message, the library will generate a **derived signing key** stored in the memory for the safety of future interactions with Ceramic Network.
-
-
+After the user signs the first message, the library will generate a **derived signing key** stored in the memory for the safety of future interactions with Ceramic Network.
 
 ## Basic Usage
 
@@ -38,7 +36,7 @@ const cyberConnect = new CyberConnect({
 });
 ```
 
-* `namespace` - Your application name.
+* `namespace` - The namespace you want to use. We recommend you use your application name as namespace  and hence, you can later filter out connections from your platform. If empty value of namespace is given, the connection will be put into the default, CyberConnect namespace. See details on [namespace](./namespace) page.
 * `env` - (optional) Env decides the endpoints. Now we have staging and production. (The default value is Env.Production).
 * `chain` - (optional) The blockchain you want to connect with. Now we support Ethereum and Solana. (The default is Blockchain.ETH).
 * `provider` - The corresponding provider of the given chain.
