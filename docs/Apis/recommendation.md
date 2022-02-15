@@ -4,12 +4,9 @@ id: recommendation
 
 # Get Recommendation
 
-We’ve built a recommendation index into our protocol for general following suggestions.
+We’ve built a recommendation index into our protocol for general follow suggestions. The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized “recommended addresses to follow” list for every address.
 
-The index jumpstarts by aggregating connections from open data sources, including Ethereum blockchain, Foundation.app, Rarible, etc. It generates a personalized “recommended addresses to follow” list for every address. 
-
-Recommendation API is to give more possible connections to users to build. It will return a list of addresses that either has already followed or been followed by the searched address on other platforms, or have the same followers with the searched address. 
-
+The Recommendation API is to suggest such possible connections for users. It will return a list of addresses that a, have the same followers with the searched address, or, b, have already followed or been followed by the searched address on other platforms.
 ## Definition
 
  The definition of Recommendation query is:
@@ -22,25 +19,25 @@ For input params:
 
 | Field     | Type    | Description                                                                                                      |
 |-----------|---------|------------------------------------------------------------------------------------------------------------------|
-| `address` | String  | The address that you want to get recommendations from                                                            |
+| `address` | String  | The address that you want to get recommendations for                                                             |
 | `filter`  | Enum    | Type of connection filter. Currently only support `SOCIAL`                                                       |
-| `network` | Network | The blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
-| `first`   | Int     | The number of entries should this query return, default is `20` and the maximum value is `50`                    |
-| `after`   | String  | After which index should this query begin, default is `"-1"`                                                     |
+| `network` | Network | The blockchain network for the queried address. Default is `ETH`. you can also use `SOLANA` for Solana network.  |
+| `first`   | Int     | The number of entries this query should return, default is `20` and the maximum value is `50`                    |
+| `after`   | String  | After which index this query should begin, default is `"-1"`                                                     |
 
-For `first` and `after` usage, please refer to Pagination Section from Identity API page.
+For `first` and `after` usage, please refer to [Pagination](./pagination).
 
-For returning fields, "SUCCESS" means you have made a successful request and can then use the data. You may see "INDEXING" for recommendation results if you put an address that has never been queried before. Our recommendation system will run in background to get the result prepared. So you can come back and check later.
+For returning fields, "SUCCESS" means you have made a successful request and can then use the data. You may see "INDEXING" for recommendation results if you have put in an address that has never been queried before. In such a case, our recommendation system will run in the background to get the results prepared. You can come back to check later.
 
 `pageInfo` is used to do pagination. Also, you can refer to Pagination Section from Identity API page for more details.
 
-There are 5 fields in `list` variable:
+There are 5 fields for each object in `list`:
 
 | Field                  | Type   | Description                                    |
 |------------------------|--------|------------------------------------------------|
 | `address`              | String | The string of recommended address              |
 | `domain`               | String | The string of recommended address' domain name |
-| `avatar`               | String | The url string of recommended address' avatar  |
+| `avatar`               | String | The URL string of recommended address' avatar  |
 | `recommendationReason` | String | The reason why we recommend this address       |
 | `followerCount`        | Int    | The number of recommended address' followers   |
 

@@ -29,4 +29,4 @@ For `pageInfo`, there are 4 fields:
 | `hasNextPage`     | Boolean | Indicating whether the next page of data exists         |
 | `hasPreviousPage` | Boolean | Indicating whether this query is the first page of data |
 
-For your pagination query, it can be a series of queries that begins with `first` as 50, and `after` as "-1" (please notice it's a string variable), and then increase `after` parameter by the batch size you set progressively, until `hasNextPage` returned by the server turns into false.
+For your pagination query, it can be a series of queries that begins with `first` as 50, and `after` as "-1" (please note that it's a string variable), and then you can increase`after`parameter by the batch size you set progressively, until `hasNextPage`returned by the server turns into false.

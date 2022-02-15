@@ -4,7 +4,7 @@ id: identity
 
 # Get Identity
 
-Identity API is used for query information about an address on blockchain network. You can retrieve an address's domain name, indexed following & followers list using the following GraphQL query.
+Identity API is used for querying information about an address on the blockchain network. You can retrieve an address's domain name, indexed following & followers list using the GraphQL query shown below.
 ## Structure
 
 The general pattern of Identity query is:
@@ -61,7 +61,7 @@ You can also use `social`, `avatar`, or other fields to get different informatio
 
 ## Retrieve Follower, Following, Friend Lists 
 
-Follower, Following, Friend are endpoints that are implemented with pagination. In order to get the whole data set of an address, you need to make requests page by page with the correct namespace and pagination input parameters. 
+Follower, Following, and Friend are endpoints that are implemented with pagination. In order to get the whole dataset of an address, you need to make requests page by page with the correct namespace and pagination input parameters.
 
 For detail, please check [Namespace](./namespace) and [Pagination](./pagination) page.
 
@@ -91,7 +91,7 @@ query FullIdentityQuery{
 }
 ```
 
-We can get a json result like this:
+We can get a JSON result like this:
 
 ```json
 {
@@ -123,7 +123,7 @@ We can get a json result like this:
 ## Retrieve All Fields
 ### Full Example
 
-You can use tools in "Playground" page to Identity API. Open the page, make sure the URL is correct, copy and paste the following query into the input.
+You can try Identity API in the "Playground" page. Open the page, make sure the URL is correct, copy and paste the following query into the input.
 
 **Example Query for Ethereum**
 
