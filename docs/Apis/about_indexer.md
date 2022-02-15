@@ -4,7 +4,7 @@ id: about_indexer
 
 # CyberConnect Indexer
 
-## High-level Use of CyberConnect Indexer
+## CyberConnect Indexer at a High Level
 
 We introduce how to mutate(follow and unfollow) a connection status between addresses in [JavaScript SDK](./installation) and [CyberConnect Button](./follow_button) sections. In this section, we will guide you how to query connection data and get potential relationship recommendations from CyberConnect Indexer.
 
@@ -12,7 +12,7 @@ CyberConnect Indexer collects on-chain data from IPFS and blockchain networks, a
 
 ![CyberConnect Indexer](../../static/img/tutorial/indexer_high_level.png)
 
-## Architecture of CyberConnect Indexer
+## CyberConnect Indexer Architecture 
 
 The CyberConnect Indexer can be divided into four parts: Processor, Aggregator, Recommender, and Querier. Each of them processes data sequentially in a pipelined fashion and In the following, we introduce each part in this order.
 
