@@ -23,7 +23,7 @@ For input params:
 | `filter`  | Enum    | Type of connection filter. Currently only support `SOCIAL`                                                       |
 | `network` | Network | The blockchain network for the queried address. Default is `ETH`. you can also use `SOLANA` for Solana network.  |
 | `first`   | Int     | The number of entries this query should return, default is `20` and the maximum value is `50`                    |
-| `after`   | String  | After which index this query should begin, default is `"-1"`                                                     |
+| `after`   | String  | After which index this query should begin, default the result starts from the beginning                          |
 
 For `first` and `after` usage, please refer to [Pagination](./pagination).
 

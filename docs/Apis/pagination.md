@@ -24,4 +24,4 @@ For `pageInfo`, there are 4 fields:
 | `hasNextPage`     | Boolean | Indicating whether the next page of data exists         |
 | `hasPreviousPage` | Boolean | Indicating whether this query is the first page of data |
 
-For your queries with pagination, it begins with the `first` as 50. Make a request and get a response from the indexer. Then you can keep the `first` and set the `after` parameter as the ending index of the last response, send another request. Repeat this process until `hasNextPage` returned by the server turns into false.
+For your query with pagination, you can begin with the `first` as 50. Make a request and get a response from the indexer. Then you can keep the `first` and set the `after` parameter's value as the ending index of the last response, send another request. Repeat this process until `hasNextPage` returned by the server turns into false.
