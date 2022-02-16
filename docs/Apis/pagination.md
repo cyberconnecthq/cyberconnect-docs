@@ -6,12 +6,7 @@ id: pagination
 
 Pagination is a feature in CyberConnect Indexer endpoints. Pagination refers to methods for programmatically requesting all of the pages, to retrieve the whole result data set. Not all API endpoints support pagination, but it is often used when result sets are large. 
 
-Users can retrieve lists from CyberConnect Indexer by using `first` and `after` parameters. The `first` request parameter enables you to configure the number of entries returned per response page. The default value of `first` parameter is 20 and the maximum value is 50. The `after` request parameter points to the end of the page of data that has been returned. 
-
-:::info
-Please note that you should set `after` as "-1" for the first query of full elements since the index of an array starts from zero.
-:::
-
+Users can retrieve lists from CyberConnect Indexer by using `first` and `after` parameters. The `first` request parameter enables you to configure the number of entries returned per response page. The default value of `first` parameter is 20 and the maximum value is 50. The `after` request parameter points to the end of the page of data that has been returned. `After` parameter is optional. If no `After` or empty value of `After` is received, the indexer will return results starting from the first element of the whole list.
 
 All CyberConnect Indexer endpoints with pagination return a `BasicInfoConnection` object with two fields:
 
@@ -29,4 +24,4 @@ For `pageInfo`, there are 4 fields:
 | `hasNextPage`     | Boolean | Indicating whether the next page of data exists         |
 | `hasPreviousPage` | Boolean | Indicating whether this query is the first page of data |
 
-For your pagination query, it can be a series of queries that begins with `first` as 50, and `after` as "-1" (please note that it's a string variable), and then you can increase`after`parameter by the batch size you set progressively, until `hasNextPage`returned by the server turns into false.
+For your queries with pagination, it begins with the `first` as 50. Make a request and get a response from the indexer. Then you can keep the `first` and set the `after` parameter as the ending index of the last response, send another request. Repeat this process until `hasNextPage` returned by the server turns into false.

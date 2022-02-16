@@ -52,7 +52,6 @@ query QueryRecommendation{
     filter: SOCIAL
     network: ETH
     first: 1
-    after: "-1"
   ) {
     result
     data {

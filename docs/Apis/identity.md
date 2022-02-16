@@ -72,7 +72,7 @@ We can use this snippet for address' follower list query:
 query FullIdentityQuery{
   identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
     followerCount(namespace: "CyberConnect")
-    followers(first: 1, after: "-1") {
+    followers(first: 1) {
       pageInfo {
         startCursor
         endCursor
@@ -141,7 +141,7 @@ query FullIdentityQuery{
     joinTime
     followerCount(namespace: "CyberConnect")
     followingCount(namespace: "CyberConnect")
-    followings(namespace: "CyberConnect", first: 2, after: "-1") {
+    followings(namespace: "CyberConnect", first: 2) {
       pageInfo {
         startCursor
         endCursor
@@ -158,7 +158,7 @@ query FullIdentityQuery{
         verifiable
       } 
     }
-    followers(namespace: "CyberConnect", first: 2, after: "-1") {
+    followers(namespace: "CyberConnect", first: 2) {
       pageInfo {
         startCursor
         endCursor
@@ -175,7 +175,7 @@ query FullIdentityQuery{
         verifiable
       } 
     }
-    friends(namespace: "CyberConnect", first: 2, after: "-1") {
+    friends(namespace: "CyberConnect", first: 2) {
       pageInfo {
         startCursor
         endCursor
