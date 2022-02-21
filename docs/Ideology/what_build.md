@@ -2,7 +2,7 @@
 id: what_build
 ---
 
-# What are we building?
+# What we are building
 
 - An Open Source Software
     - To build a technology that withstands the test of time, we leverage the wisdom of the crowd and gather the community to collectively work on the key problems of Web3 Social. 

@@ -2,7 +2,7 @@
 id: what_isnt
 ---
 
-# What CyberConnect Protocol is Not?
+# What CyberConnect Protocol is Not
 
 - Not a Profile Page. 
   

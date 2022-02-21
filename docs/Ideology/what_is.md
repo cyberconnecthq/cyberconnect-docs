@@ -2,7 +2,7 @@
 id: what_is
 ---
 
-# What is CyberConnect Protocol?
+# What CyberConnect Protocol is
 
 - A protocol for users to easily create social connections, manage them, and take them to all applications that are in CyberConnect’s ecosystem. CyberConnect Protocol democratizes users’ digital social connections and returns the ownership of social data back to users - connections formed on CyberConnect are “assets” that are truly owned by users, analogous to how tokens are assets truly owned by their holder.
 
