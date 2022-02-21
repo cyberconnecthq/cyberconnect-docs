@@ -7,14 +7,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CyberConnect',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Building the composable social graph protocol for Web3',
+  url: 'https://doc.cyberconnect.me',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'CyberConnect', // Usually your GitHub org/user name.
+  projectName: 'CyberConnect Developer Center', // Usually your repo name.
 
   presets: [
     [
@@ -24,7 +24,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/cyberconnecthq/cyberconnect-docs/tree/dev',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -32,15 +32,30 @@ const config = {
       }),
     ],
   ],
-
+  plugins: [
+    [
+      require.resolve('@edno/docusaurus2-graphql-doc-generator'),
+      {
+        schema: "https://api.cybertino.io/connect/",
+        rootPath: "./docs",
+        baseURL: "GraphQL",
+        linkRoot: "/docs",
+        homepage: "./docs/graphql.md",
+        loaders: {
+          UrlLoader: "@graphql-tools/url-loader"
+        }
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'CyberConnect Docs',
+        title: 'CyberConnect Developer Center',
         logo: {
           alt: 'CyberConnect Logo',
           src: 'img/logo.png',
+          srcDark: 'img/dark-mode-logo.png'
         },
         items: [
           {
@@ -49,15 +64,43 @@ const config = {
             position: 'left',
             label: 'Introduction',
           },
+          {
+            type: 'doc',
+            docId: 'get_started',
+            position: 'left', 
+            label: 'Docs',
+          },
+          {
+            type: 'doc',
+            docId: 'GraphQL/graphql',
+            position: 'left',
+            label: 'API',
+          },
+          {
+            type: 'doc',
+            docId: 'Partnership Examples/unipass',
+            position: 'left',
+            label: 'Showcase',
+          },
+          {
+            type: 'doc',
+            docId: 'Community/community',
+            position: 'left',
+            label: 'Community',
+          },
           // {
-          //   type: 'doc',
-          //   docId: 'sdk',
-          //   position: 'left',
-          //   label: 'SDK',
+          //   href: 'https://github.com/cyberconnecthq',
+          //   label: 'Version',
+          //   position: 'right',
           // },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/cyberconnecthq',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://cyberconnect.me/',
+            label: 'Website',
             position: 'right',
           },
         ],
@@ -69,8 +112,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Introduction',
+                to: '/docs/introduction',
               },
             ],
           },
@@ -78,16 +121,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://cyberconnect.fyi/discord',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/CyberConnectHQ',
               },
             ],
           },
@@ -95,22 +134,25 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/cyberconnecthq',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} CyberConnect, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      themeConfig: {
+        metadata: [
+          {name: 'og:title', content: 'CyberConnect Developer Center'}, 
+          {name: 'og:type', content: 'website'}, 
+          {name: 'og:url', content: 'https://docs.cyberconnect.me/'}, 
+          {name: 'og:image', content: 'https://cyberconnect.me/assets/logo-black.svg'}
+        ],
+      }
     }),
 };
 

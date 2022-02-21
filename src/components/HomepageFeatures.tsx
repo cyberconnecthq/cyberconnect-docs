@@ -10,50 +10,50 @@ import styles from './HomepageFeatures.module.css';
 
 type FeatureItem = {
   title: string;
-  image: string;
+  image?: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    title: 'Self-Sovereign',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        We return the ownership and utilities of social graph data back to users. Only users should have autonomy over how, where, and for what their data is used. 
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    image: '/img/undraw_docusaurus_tree.svg',
+    title: 'Blockchain Agnostic',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Our protocol is designed to be open. Not tied to any single blockchain, the protocol is created for a multi-blockchain ecosystem.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    image: '/img/undraw_docusaurus_react.svg',
+    title: 'Portable',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Interoperability is key to a truly open web. We empower everyone to travel between apps with their own social graph as part of their Web3 identity.
       </>
+    ),
+  },
+  {
+    title: 'Composable',
+    description: (
+        <>
+          Tap into social graph data with one click. Build upon it with agility for quick iterations.
+          Fast forward bootstrapping. Build experiences not walls.
+        </>
     ),
   },
 ];
 
 function Feature({title, image, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <img className={styles.featureSvg} alt={title} src={image} />
-      </div>
-      <div className="text--center padding-horiz--md">
+    <div className={clsx('col col--3')}>
+      <div className="text--left padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
