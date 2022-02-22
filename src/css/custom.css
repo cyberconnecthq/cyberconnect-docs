@@ -39,10 +39,15 @@ html[data-theme="dark"] {
 html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
-html .navbar {
+.navbar {
   height: 100px;
-  font-size: 13px;
 }
+@media (max-width: 450px) {
+  .navbar {
+    height: 45px;
+  }
+}
+
 html[data-theme="light"] .navbar {
   background-color: #fafafa;
   color: var(--ifm-color-primary);
@@ -57,7 +62,7 @@ html[data-theme="dark"] .navbar {
 .main-wrapper .hero {
   background-color: var(--ifm-color-primary-inverse);
   color: var(--ifm-color-primary);
-  height: calc((100vh - 100px - 135px) / 2);
+  min-height: calc((100vh - 100px - 135px) / 2);
 }
 
 .main-wrapper .hero .container .hero__title {
