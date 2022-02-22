@@ -85,11 +85,15 @@ const sidebars = {
         },
         {
           type: 'doc',
-          id: 'Apis/identity',
+          id: 'Apis/get_identity',
         },
         {
           type: 'doc',
-          id: 'Apis/recommendation',
+          id: 'Apis/get_recommendation',
+        },
+        {
+          type: 'doc',
+          id: 'Apis/get_connection',
         },
         {
           type: 'doc',
