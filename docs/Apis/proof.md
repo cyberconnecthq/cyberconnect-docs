@@ -107,13 +107,13 @@ D = content json blob digest
 
 For follow and unfollow, the format would be:
 
-```json
+```
 {
-	"name": "follow"/"unfollow" string
-	"from": string
+  "name": "follow"/"unfollow" string
+  "from": string
   "to": string
-	"namespace": string
-	"network": "ETH"/"SOLANA" string
+  "namespace": string
+  "network": "ETH"/"SOLANA" string
   "alias": ""
   "timestamp": int
 }
