@@ -105,6 +105,10 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'Apis/proof',
+        },
+        {
+          type: 'doc',
           id: 'Apis/playground',
         },
       ]
