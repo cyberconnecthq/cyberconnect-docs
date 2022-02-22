@@ -5,7 +5,7 @@
   width: 100%;
   color: var(--ifm-color-primary-inverse);
   background-color: var(--ifm-color-primary);
-  height: calc((100vh - 135px - 100px) / 2);
+  min-height: calc((100vh - 135px - 100px) / 2);
 }
 .featureSvg {
   height: 200px;
