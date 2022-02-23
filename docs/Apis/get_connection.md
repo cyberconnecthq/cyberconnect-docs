@@ -16,23 +16,23 @@ connections(fromAddr String!, toAddrList [String!]!, network Network) [Connectio
 
 | Field        | Type       | Description                                                                                                      |
 | ------------ | ---------- | ---------------------------------------------------------------------------------------------------------------- |
-| `fromAddr`   | String!    | The source address that you want to query connections with.                                                      |
-| `toAddrList` | [String!]! | A list of addresses that have connection with `fromAddr`.                                                        |
-| `network`    | Network    | The blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
+| `fromAddr`   | String!    | The source address that you want to query connections with                                                       |
+| `toAddrList` | [String!]! | A list of addresses that have connection with `fromAddr`                                                         |
+| `network`    | Network    | The blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network  |
 
 With correct inputs, you can get a `Connections` object as a list of connection data, consisting following fields:
 
 | Field           | Type          | Description                                                                                                                |
 | --------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `fromAddr `     | String!       | The source address that you want to query connections with.                                                                |
-| `toAddr`        | String!       | An address that is given in `toAddrList`.                                                                                  |
-| `followStatus ` | FollowStatus! | The following and followed relationships between `fromAddr` and `toAddr`.                                                  |
-| `namespace`     | String!       | The namespace of this connection.                                                                                          |
-| `alias`         | String!       | The alias set by the `fromAddress`.                                                                                        |
-| `network`       | Network!      | The network that is given as the querying parameter.                                                                       |
-| `createdAt`     | String!       | The creation time of this connection.                                                                                      |
-| `updatedAt`     | String!       | The latest update time of this connection.                                                                                 |
-| `proof`         | String!       | The proof of this connection. Please see [CyberConnect Proof of Connection](./proof) for detail design and implementation. |
+| `fromAddr `     | String!       | The source address that you want to query connections with                                                                 |
+| `toAddr`        | String!       | An address that is given in `toAddrList`                                                                                   |
+| `followStatus ` | FollowStatus! | The following and followed relationships between `fromAddr` and `toAddr`                                                   |
+| `namespace`     | String!       | The namespace of this connection                                                                                           |
+| `alias`         | String!       | The alias set by the `fromAddress`                                                                                         |
+| `network`       | Network!      | The network that is given as the querying parameter                                                                        |
+| `createdAt`     | String!       | The creation time of this connection                                                                                       |
+| `updatedAt`     | String!       | The latest update time of this connection                                                                                  |
+| `proof`         | String!       | The proof of this connection. Please see [CyberConnect Proof of Connection](./proof) for detail design and implementation  |
 
 ## Example
 

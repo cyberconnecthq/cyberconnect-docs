@@ -15,7 +15,7 @@ For the first time use, a signing key will be randomly generated from the client
 
 By following this procedure, the number of times the primary key used is reduced to a minimum, and hence to improve the security.
 
-The complete process consists of three parts: Key Generation, Proof Generation and Proof Verificaiton.
+The complete process consists of three parts: [Key Generation](./#key-generation), [Proof Generation](./#proof-generation) and [Proof Verificaiton](./#proof-verification).
 
 ## Key Generation
 
