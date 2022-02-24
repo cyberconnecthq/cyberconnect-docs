@@ -23,25 +23,22 @@ After the user signs the first message, the library will generate a **derived s
 **Init CyberConnect**
 
 ```js
-import CyberConnect, {
-  Env,
-  Blockchain,
-} from 'npm install @cyberlab/cyberconnect';
+import CyberConnect, { Env, Blockchain } from "@cyberlab/cyberconnect";
 
 const cyberConnect = new CyberConnect({
-  namespace: 'CyberConnect',
+  namespace: "CyberConnect",
   env: Env.Production,
   chain: Blockchain.ETH,
   provider: provider,
-  signingMessageEntity: 'CyberConnect' || 'YOUR_ENTITY_HERE',
+  signingMessageEntity: "CyberConnect" || "YOUR_ENTITY_HERE",
 });
 ```
 
-* `namespace` - The namespace you want to use. We recommend you use your application name as namespace  and hence, you can later filter out connections from your platform. If empty value of namespace is given, the connection will be put into the default, CyberConnect namespace. See details on [namespace](./namespace) page.
-* `env` - (optional) Env decides the endpoints. Now we have staging and production. (The default value is Env.Production).
-* `chain` - (optional) The blockchain you want to connect with. Now we support Ethereum and Solana. (The default is Blockchain.ETH).
-* `provider` - The corresponding provider of the given chain.
-* signingMessageEntity - (optional) Use to describe the entity users sign their message with. Users will see it when authorizing in the wallet `I authorize ${signingMessageEntity} from this device using signing key`. The default entity is CyberConnect.
+- `namespace` - The namespace you want to use. We recommend you use your application name as namespace and hence, you can later filter out connections from your platform. If empty value of namespace is given, the connection will be put into the default, CyberConnect namespace. See details on [namespace](./namespace) page.
+- `env` - (optional) Env decides the endpoints. Now we have staging and production. (The default value is Env.Production).
+- `chain` - (optional) The blockchain you want to connect with. Now we support Ethereum and Solana. (The default is Blockchain.ETH).
+- `provider` - The corresponding provider of the given chain.
+- signingMessageEntity - (optional) Use to describe the entity users sign their message with. Users will see it when authorizing in the wallet `I authorize ${signingMessageEntity} from this device using signing key`. The default entity is CyberConnect.
 
 **Connect**
 
@@ -49,8 +46,8 @@ const cyberConnect = new CyberConnect({
 cyberConnect.connect(targetAddr, alias);
 ```
 
-* `targetAddr` - The target wallet address to connect.
-* `alias` - (optional) Alias for the target address.
+- `targetAddr` - The target wallet address to connect.
+- `alias` - (optional) Alias for the target address.
 
 **Disconnect**
 
@@ -63,7 +60,7 @@ cyberConnect.disconnect(targetAddr);
 You can get Solana provider from `@solana/wallet-adapter-react`
 
 ```js
-import { useWallet } from '@solana/wallet-adapter-react';
+import { useWallet } from "@solana/wallet-adapter-react";
 const solanaProvider = useWallet();
 ```
 
@@ -74,10 +71,10 @@ import CyberConnect, {
   Env,
   Blockchain,
   Solana,
-} from 'npm install @cyberlab/cyberconnect';
+} from "npm install @cyberlab/cyberconnect";
 
 const cyberConnect = new CyberConnect({
-  namespace: 'CyberConnect',
+  namespace: "CyberConnect",
   env: Env.Production,
   chain: Blockchain.ETH,
   provider: solanaProvider,
