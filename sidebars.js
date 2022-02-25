@@ -144,6 +144,10 @@ const sidebars = {
           type: 'doc',
           id: 'Partnership Examples/convo',
         },
+        {
+          type: 'doc',
+          id: 'Partnership Examples/unlock',
+        },
       ],
     },
     {
