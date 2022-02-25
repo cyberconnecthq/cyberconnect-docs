@@ -198,6 +198,16 @@ const sidebars = {
       ]
     },
     {
+      type: 'category',
+      label: 'Open-Source Efforts',
+      items: [
+        {
+          type: 'doc',
+          id: 'Community/Projects/osprojects',
+        }
+      ]
+    },
+    {
       type: 'doc',
       id: 'resources',
     },
