@@ -40,6 +40,21 @@ const cyberConnect = new CyberConnect({
 - `provider` - The corresponding provider of the given chain.
 - signingMessageEntity - (optional) Use to describe the entity users sign their message with. Users will see it when authorizing in the wallet `I authorize ${signingMessageEntity} from this device using signing key`. The default entity is CyberConnect.
 
+**Using Web3.js**
+
+```js
+const provider = web3.eth.currentProvider;
+```
+
+**Using ethers.js & Web3Modal**
+
+```js
+import { Web3Provider } from "@ethersproject/providers";
+import Web3Modal from "web3modal";
+const modal = await web3Modal.connect();
+const provider = new Web3Provider(modal).provider;
+```
+
 **Connect**
 
 ```js
