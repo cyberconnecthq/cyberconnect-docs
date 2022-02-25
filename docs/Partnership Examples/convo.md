@@ -2,7 +2,7 @@
 id: convo
 ---
 
-# CONVO SPACE
+# Convo Space
 
 Convo offers all the Tooling and Infrastructure to build Social Platforms that are composable across the web, powered by Web3.
 

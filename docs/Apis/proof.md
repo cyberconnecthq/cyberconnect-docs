@@ -11,11 +11,11 @@ In this page, we will in describe the design and processes of proof generation a
 
 CyberConnect protocol commits to providing a secure and user-friendly process for generating connections between addresses.
 
-For the first time use, a signing key will be randomly generated from the client side, authorized through Metamask popup to identify the user and complete signing. Then, the public key of this signing key will be uploaded to the CyberConnect Indexer for storage and verification.
+For the first time use, a signing key will be randomly generated from the client side, authorized through MetaMask popup to identify the user and complete signing. Then, the public key of this signing key will be uploaded to the CyberConnect Indexer for storage and verification.
 
 By following this procedure, the number of times the primary key used is reduced to a minimum, and hence to improve the security.
 
-The complete process consists of three parts: [Key Generation](./#key-generation), [Proof Generation](./#proof-generation) and [Proof Verificaiton](./#proof-verification).
+The complete process consists of three parts: [Key Generation](./#key-generation), [Proof Generation](./#proof-generation) and [Proof Verification](./#proof-verification).
 
 ## Key Generation
 
@@ -57,7 +57,7 @@ D = content json blob digest
 
 **Step 3 -** MetaMask pops up to ask user with address **A** to sign the **SKM** to produce signature **SKS**.
 
-**Step 4 -** Register **SK** to **A**'s keychain by callling backend - **registerKey/auth(A, SKM, SKS)**
+**Step 4 -** Register **SK** to **A**'s keychain by calling backend - **registerKey/auth(A, SKM, SKS)**
 
 **Step 5 -** The Application stores _SK_ private key into local storage if previous step gets a successful response
 
@@ -145,7 +145,7 @@ For example,
 
 While the key generation and proof generation steps happen on the user's frontend and the CyberConnect Indexer backend, proof can be retrieved through [Connection](./get_connection) API and is verifiable by any third party.
 
-After a proof is retrived, the verification should contain three steps:
+After a proof is retrieved, the verification should contain three steps:
 
 **Step 1 -** Verify **SK** is authorized by the user. In specific, examine **signingKeySignature** in **signingKeyAuth**.
 
@@ -155,6 +155,6 @@ After a proof is retrived, the verification should contain three steps:
 
 ## Example
 
-[CyberConnect Official Solana Webpage](https://sol.cyberconnect.me/) provides an implementation of PoC and a visble display of proof data. Connect to your Solana wallet and follow someone on the site. You can see a your connection proofs like this image:
+[CyberConnect Official Solana Webpage](https://sol.cyberconnect.me/) provides an implementation of PoC and a display of proof data. Connect to your Solana wallet and follow someone on the site. You can see a your connection proofs like this image:
 
 ![Proof](../../static/img/tutorial/proof.png)
