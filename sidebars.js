@@ -212,6 +212,10 @@ const sidebars = {
         {
           type: 'doc',
           id: 'Community/Projects/osprojects',
+        },
+        {
+          type: 'doc',
+          id: 'Community/Projects/social_verifier',
         }
       ]
     },
