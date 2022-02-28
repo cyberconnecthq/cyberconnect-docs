@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -15,7 +16,7 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-  --ifm-font-family-homepage: Outfit;
+  --ifm-font-family-homepage: Poppins;
 }
 
 .docusaurus-highlight-code-line {
@@ -25,64 +26,82 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='light'] {
+html[data-theme="light"] {
   --ifm-color-primary: #000;
   --ifm-color-primary-inverse: #fff;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-color-primary: #fff;
   --ifm-color-primary-inverse: #000;
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+.navbar {
+  height: 100px;
+}
+@media (max-width: 450px) {
+  .navbar {
+    height: 45px;
+  }
+}
 
-html[data-theme='light'] .navbar{
-  background-color: #FAFAFA;
+html[data-theme="light"] .navbar {
+  background-color: #fafafa;
   color: var(--ifm-color-primary);
   box-shadow: none;
 }
 
-html[data-theme='dark'] .navbar {
+html[data-theme="dark"] .navbar {
   background-color: var(--ifm-color-primary-inverse);
   color: var(--ifm-color-primary);
 }
 
-.main-wrapper  .hero{
+.main-wrapper .hero {
   background-color: var(--ifm-color-primary-inverse);
   color: var(--ifm-color-primary);
+  min-height: calc((100vh - 100px - 135px) / 2);
 }
 
-.main-wrapper  .hero .container .hero__title {
-  width: 45rem;
+.main-wrapper .hero .container .hero__title {
+  width: 800px;
   margin: 0 auto 54px;
+  font-size: 60px;
+  font-weight: 700;
 }
-.main-wrapper .hero .container div .button{
+@media screen and (max-width: 966px) {
+  .main-wrapper .hero .container .hero__title {
+    width: 100%;
+    font-size: 400%;
+  }
+}
+.main-wrapper .hero .container div .button {
   background-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary-inverse);
   border-radius: 100px;
   font-family: var(--ifm-font-family-homepage);
 }
 
-
-.footer  {
+.footer {
   background-color: var(--ifm-color-primary-inverse);
   color: var(--ifm-color-primary);
 }
 
-html[data-theme='light'] .footer .container .row .col .footer__title{
+html[data-theme="light"] .footer .container .row .col .footer__title {
   font-family: var(--ifm-font-family-homepage);
   color: var(--ifm-color-primary);
 }
 
-html[data-theme='dark'] .footer .container .footer_title, .footer__link-item {
+html[data-theme="dark"] .footer .container .footer_title,
+.footer__link-item {
   font-family: var(--ifm-font-family-homepage);
-  color: var(--ifm-color-primary)
+  color: var(--ifm-color-primary);
 }
 .navbar,
-.homepage .hero .container .hero__title, .homepage main section .container .row .col .text--left h3,
+.homepage .hero .container .hero__title,
+.homepage main section .container .row .col .text--left h3,
 .homepage main section .container .row .col .text--left p {
   font-family: var(--ifm-font-family-homepage);
 }
