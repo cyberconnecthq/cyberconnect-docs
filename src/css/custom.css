@@ -105,3 +105,12 @@ html[data-theme="dark"] .footer .container .footer_title,
 .homepage main section .container .row .col .text--left p {
   font-family: var(--ifm-font-family-homepage);
 }
+
+.markdown a {
+  text-decoration-line: underline;
+}
+
+.markdown a:hover {
+  text-decoration-line: underline;
+  /* color: SeaGreen; */
+}
