@@ -20,216 +20,212 @@ const sidebars = {
 
   introductionSidebar: [
     {
-      type: 'doc',
-      id: 'introduction',
+      type: "doc",
+      id: "introduction",
     },
     {
-      type: 'category',
-      label: 'Ideology',
+      type: "category",
+      label: "Ideology",
       items: [
         {
-          type: 'doc',
-          id: 'Ideology/what_is',
+          type: "doc",
+          id: "Ideology/what_is",
         },
         {
-          type: 'doc',
-          id: 'Ideology/what_isnt',
+          type: "doc",
+          id: "Ideology/what_isnt",
         },
         {
-          type: 'doc',
-          id: 'Ideology/why_user',
+          type: "doc",
+          id: "Ideology/why_user",
         },
         {
-          type: 'doc',
-          id: 'Ideology/why_dev',
+          type: "doc",
+          id: "Ideology/why_dev",
         },
         {
-          type: 'doc',
-          id: 'Ideology/what_build',
+          type: "doc",
+          id: "Ideology/what_build",
         },
         {
-          type: 'doc',
-          id: 'Ideology/what_not_build',
+          type: "doc",
+          id: "Ideology/what_not_build",
         },
-      ]
-    }
+      ],
+    },
   ],
   integrationSidebar: [
     {
-      type: 'doc',
-      id: 'get_started',
+      type: "doc",
+      id: "get_started",
     },
-    
+
     {
-      type: 'category',
-      label: 'Javascript SDK',
+      type: "category",
+      label: "Javascript SDK",
       items: [
         {
-          type: 'doc',
-          id: 'Apis/installation',
+          type: "doc",
+          id: "Apis/installation",
         },
         {
-          type: 'doc',
-          id: 'Apis/connect',
+          type: "doc",
+          id: "Apis/connect",
         },
-
       ],
     },
     {
-      type: 'category',
-      label: 'GraphQL Indexer',
+      type: "category",
+      label: "GraphQL Indexer",
       items: [
         {
-          type: 'doc',
-          id: 'Apis/about_indexer'
+          type: "doc",
+          id: "Apis/about_indexer",
         },
         {
-          type: 'doc',
-          id: 'Apis/get_identity',
+          type: "doc",
+          id: "Apis/get_identity",
         },
         {
-          type: 'doc',
-          id: 'Apis/get_recommendation',
+          type: "doc",
+          id: "Apis/get_recommendation",
         },
         {
-          type: 'doc',
-          id: 'Apis/get_connection',
+          type: "doc",
+          id: "Apis/get_connection",
         },
         {
-          type: 'doc',
-          id: 'Apis/namespace',
+          type: "doc",
+          id: "Apis/namespace",
         },
         {
-          type: 'doc',
-          id: 'Apis/pagination',
+          type: "doc",
+          id: "Apis/pagination",
         },
         {
-          type: 'doc',
-          id: 'Apis/proof',
+          type: "doc",
+          id: "Apis/proof",
         },
         {
-          type: 'doc',
-          id: 'Apis/playground',
+          type: "doc",
+          id: "Apis/playground",
         },
-      ]
+      ],
     },
     {
-      type: 'doc',
-      id: 'Apis/follow_button',
+      type: "doc",
+      id: "Apis/follow_button",
     },
     {
-      type: 'doc',
-      id: 'tech_overview',
+      type: "doc",
+      id: "Apis/social_verifier",
     },
-
+    {
+      type: "doc",
+      id: "tech_overview",
+    },
   ],
   showcaseSidebar: [
     {
-      type: 'category',
-      label: 'Partnerships',
+      type: "category",
+      label: "Partnerships",
       items: [
         {
-          type: 'doc',
-          id: 'Partnership Examples/galaxy',
+          type: "doc",
+          id: "Partnership Examples/galaxy",
         },
         {
-          type: 'doc',
-          id: 'Partnership Examples/unipass',
+          type: "doc",
+          id: "Partnership Examples/unipass",
         },
         {
-          type: 'doc',
-          id: 'Partnership Examples/treasureland',
+          type: "doc",
+          id: "Partnership Examples/treasureland",
         },
         {
-          type: 'doc',
-          id: 'Partnership Examples/convo',
+          type: "doc",
+          id: "Partnership Examples/convo",
         },
         {
-          type: 'doc',
-          id: 'Partnership Examples/unlock',
+          type: "doc",
+          id: "Partnership Examples/unlock",
         },
         {
-          type: 'doc',
-          id: 'Partnership Examples/light',
+          type: "doc",
+          id: "Partnership Examples/light",
         },
       ],
     },
     {
-      type: 'category',
-      label: 'More Examples',
+      type: "category",
+      label: "More Examples",
       items: [
         {
-          type: 'doc',
-          id: 'More Examples/dao',
+          type: "doc",
+          id: "More Examples/dao",
         },
         {
-          type: 'doc',
-          id: 'More Examples/chat',
+          type: "doc",
+          id: "More Examples/chat",
         },
         {
-          type: 'doc',
-          id: 'More Examples/nft_trading',
+          type: "doc",
+          id: "More Examples/nft_trading",
         },
         {
-          type: 'doc',
-          id: 'More Examples/did',
+          type: "doc",
+          id: "More Examples/did",
         },
         {
-          type: 'doc',
-          id: 'More Examples/feeds',
+          type: "doc",
+          id: "More Examples/feeds",
         },
         {
-          type: 'doc',
-          id: 'More Examples/games',
+          type: "doc",
+          id: "More Examples/games",
         },
         {
-          type: 'doc',
-          id: 'More Examples/blockchain_explorer',
+          type: "doc",
+          id: "More Examples/blockchain_explorer",
         },
       ],
     },
   ],
   communitySidebar: [
     {
-      type: 'category',
-      label: 'Community',
+      type: "category",
+      label: "Community",
       items: [
         {
-          type: 'doc',
-          id: 'Community/community',
+          type: "doc",
+          id: "Community/community",
         },
         {
-          type: 'doc',
-          id: 'Community/past_events',
+          type: "doc",
+          id: "Community/past_events",
         },
-        
-      ]
+      ],
     },
     {
-      type: 'category',
-      label: 'Open-Source Efforts',
+      type: "category",
+      label: "Open-Source Efforts",
       items: [
         {
-          type: 'doc',
-          id: 'Community/Projects/osprojects',
+          type: "doc",
+          id: "Community/Projects/osprojects",
         },
-        {
-          type: 'doc',
-          id: 'Community/Projects/social_verifier',
-        }
-      ]
+      ],
     },
     {
-      type: 'doc',
-      id: 'resources',
+      type: "doc",
+      id: "resources",
     },
     {
-      type: 'doc',
-      id: 'contact_us',
+      type: "doc",
+      id: "contact_us",
     },
   ],
   ...require("./docs/GraphQL/sidebar-schema"),
-   
 };
 
 module.exports = sidebars;

@@ -42,18 +42,55 @@ const cyberConnect = new CyberConnect({
 
 **Connect**
 
-```js
-cyberConnect.connect(targetAddr, alias);
+```ts
+cyberConnect.connect(targetAddr, alias, connectionType);
 ```
 
 - `targetAddr` - The target wallet address to connect.
 - `alias` - (optional) Alias for the target address.
+- `connectionType` - (optional) The type of the connection. The default value is `Connection.FOLLOW`. See [Connection Type](#ConnectionType) for more details.
 
 **Disconnect**
 
-```js
+```ts
 cyberConnect.disconnect(targetAddr);
 ```
+
+- `targetAddr` - The target wallet address to disconnect.
+
+**BatchConnect**
+
+```ts
+cyberConnect.batchConnect(targetAddrs, connectionType);
+```
+
+- `targetAddrs` - A list of wallet addresses to connect.
+- `connectionType` - (optional) The type of the connection. The default value is `Connection.FOLLOW`. See [Connection Type](#ConnectionType) for more details.
+
+**SetAlias**
+
+```ts
+cyberConnect.setAlias(targetAddr, alias);
+```
+
+- `targetAddr` - The target wallet address to disconnect.
+- `alias` - The alias for the target address.
+
+**Connection Type**
+
+You can create different types of connections for different purposes.
+
+E.g: You can like a NFT by creating a "LIKE" connection from you to the NFT.
+
+```ts
+import { ConnectionType } from "@cyberlab/cyberconnect";
+
+cyberConnect.connect(targetAddr, alias, ConnectionType.LIKE);
+```
+
+Those types we support: `FOLLOW`, `LIKE`, `REPORT`, `WATCH` and `VOTE`
+
+<b>Note</b>: Only one type connection can be created from one to another, which means you can't create both "FOLLOW" connection and "LIKE" connection from you to "Ryan".
 
 **Solana**
 
