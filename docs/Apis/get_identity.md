@@ -1,34 +1,36 @@
 ---
-id: identity
+id: get_identity
 ---
 
 # Get Identity
 
 Identity API is used for querying information about an address on the blockchain network. You can retrieve an address's domain name, indexed following & followers list using the GraphQL query shown below.
+
 ## Structure
 
 The general pattern of Identity query is:
+
 ```graphql
 identity(address String!, network Network) UserIdentity!
 ```
 
 | Field     | Type    | Description                                                                                                      |
-|-----------|---------|------------------------------------------------------------------------------------------------------------------|
+| --------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
 | `address` | String  | the string of the address that you query for                                                                     |
 | `network` | Network | the blockchain network for the querying address. Default is `ETH`. you can also use `SOLANA` for Solana network. |
 
 With correct input, you can retrieve a `UserIdentity` object with the following fields:
- 
+
 | Field            | Type                | Description                                                                   |
-|------------------|---------------------|-------------------------------------------------------------------------------|
+| ---------------- | ------------------- | ----------------------------------------------------------------------------- |
 | `address`        | String              | The address that you are querying                                             |
 | `domain`         | String              | Primary ENS domain or Solana domain of the address                            |
 | `ens`            | String              | ENS Domain of the address (DEPRECATED:ens is deprecated. Use domain instead.) |
 | `social`         | Social              | User's social account, like Twitter                                           |
 | `avatar`         | String              | User's avatar URL                                                             |
 | `joinTime`       | String              | The time of user's first sent transaction on the given blockchain network     |
-| `followerCount`  | Int                 | How many followers do the user have for the given network and namespace     |
-| `followingCount` | Int                 | How many followings do the user have for the given network and namespace    |
+| `followerCount`  | Int                 | How many followers do the user have for the given network and namespace       |
+| `followingCount` | Int                 | How many followings do the user have for the given network and namespace      |
 | `followings`     | BasicInfoConnection | List of user's followings                                                     |
 | `followers`      | BasicInfoConnection | List of user's followers                                                      |
 | `friends`        | BasicInfoConnection | List of user's friends (mutually followed)                                    |
@@ -38,8 +40,11 @@ With correct input, you can retrieve a `UserIdentity` object with the following 
 If you only need to query one address' ENS, you can run:
 
 ```graphql
-query QueryForENS{
-  identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+query QueryForENS {
+  identity(
+    address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
+    network: ETH
+  ) {
     domain
   }
 }
@@ -57,9 +62,9 @@ and you will get:
 }
 ```
 
-You can also use `social`, `avatar`, or other fields to get different information about an account. 
+You can also use `social`, `avatar`, or other fields to get different information about an account.
 
-## Retrieve Follower, Following, Friend Lists 
+## Retrieve Follower, Following, Friend Lists
 
 Follower, Following, and Friend are endpoints that are implemented with pagination. In order to get the whole dataset of an address, you need to make requests page by page with the correct namespace and pagination input parameters.
 
@@ -68,9 +73,13 @@ For detail, please check [Namespace](./namespace) and [Pagination](./pagination)
 ### Followers Example
 
 We can use this snippet for address' follower list query:
+
 ```graphql
-query FullIdentityQuery{
-  identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+query FullIdentityQuery {
+  identity(
+    address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
+    network: ETH
+  ) {
     followerCount(namespace: "CyberConnect")
     followers(first: 1) {
       pageInfo {
@@ -78,14 +87,14 @@ query FullIdentityQuery{
         endCursor
         hasNextPage
         hasPreviousPage
-      } 
+      }
       list {
         address
         domain
         avatar
         namespace
         lastModifiedTime
-      } 
+      }
     }
   }
 }
@@ -121,6 +130,7 @@ We can get a JSON result like this:
 ```
 
 ## Retrieve All Fields
+
 ### Full Example
 
 You can try Identity API in the "Playground" page. Open the page, make sure the URL is correct, copy and paste the following query into the input.
@@ -130,8 +140,11 @@ You can try Identity API in the "Playground" page. Open the page, make sure the 
 We take CyberLab.eth as an example. To query the information of it, type:
 
 ```graphql
-query FullIdentityQuery{
-  identity(address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c", network: ETH) {
+query FullIdentityQuery {
+  identity(
+    address: "0x148d59faf10b52063071eddf4aaf63a395f2d41c"
+    network: ETH
+  ) {
     address
     domain
     social {
@@ -147,7 +160,7 @@ query FullIdentityQuery{
         endCursor
         hasNextPage
         hasPreviousPage
-      } 
+      }
       list {
         address
         domain
@@ -156,7 +169,7 @@ query FullIdentityQuery{
         namespace
         lastModifiedTime
         verifiable
-      } 
+      }
     }
     followers(namespace: "CyberConnect", first: 2) {
       pageInfo {
@@ -164,7 +177,7 @@ query FullIdentityQuery{
         endCursor
         hasNextPage
         hasPreviousPage
-      } 
+      }
       list {
         address
         domain
@@ -173,7 +186,7 @@ query FullIdentityQuery{
         namespace
         lastModifiedTime
         verifiable
-      } 
+      }
     }
     friends(namespace: "CyberConnect", first: 2) {
       pageInfo {
@@ -181,7 +194,7 @@ query FullIdentityQuery{
         endCursor
         hasNextPage
         hasPreviousPage
-      } 
+      }
       list {
         address
         domain
@@ -190,7 +203,7 @@ query FullIdentityQuery{
         namespace
         lastModifiedTime
         verifiable
-      } 
+      }
     }
   }
 }
