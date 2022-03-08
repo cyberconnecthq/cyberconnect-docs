@@ -132,6 +132,22 @@ const sidebars = {
       items: [
         {
           type: "doc",
+          id: "Partnership Examples/light",
+        },
+        {
+          type: "doc",
+          id: "Partnership Examples/grape",
+        },
+        {
+          type: "doc",
+          id: "Partnership Examples/helloworld",
+        },
+        {
+          type: "doc",
+          id: "Partnership Examples/etherloop",
+        },
+        {
+          type: "doc",
           id: "Partnership Examples/galaxy",
         },
         {
@@ -149,10 +165,6 @@ const sidebars = {
         {
           type: "doc",
           id: "Partnership Examples/unlock",
-        },
-        {
-          type: "doc",
-          id: "Partnership Examples/light",
         },
       ],
     },
