@@ -43,3 +43,11 @@ npm: [https://www.npmjs.com/package/@cyberlab/social-verifier](https://www.npmjs
 This repo contains a list of verified mappings that link Ethereum addresses with social profiles (Twitter supported currently).
 
 Github: [https://github.com/cyberconnecthq/connect-list](https://github.com/cyberconnecthq/connect-list)
+
+**CyberConnect Explorer “CyberGraph” Demo**
+
+An explorer typed demo application to show your CyberConnect connections in Metaverse.
+
+Web: [https://cyber-graph.vercel.app/](https://cyber-graph.vercel.app/)
+
+Github: [https://github.com/cyberconnecthq/CyberGraph](https://github.com/cyberconnecthq/CyberGraph)
