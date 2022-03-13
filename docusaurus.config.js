@@ -4,12 +4,12 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-const math = require('remark-math');
-const katex = require('rehype-katex');
+const math = require("remark-math");
+const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "CyberConnect",
+  title: "Developer Center | CyberConnect",
   tagline: "Building the composable social graph protocol for Web3",
   url: "https://doc.cyberconnect.me",
   baseUrl: "/",
@@ -153,11 +153,28 @@ const config = {
       },
       themeConfig: {
         metadata: [
-          { name: "og:title", content: "CyberConnect Developer Center" },
+          // OG
+          { name: "og:title", content: "Developer Center | CyberConnect" },
+          {
+            name: "og:description",
+            content: "The comprehensive guide for CyberConnect protocol",
+          },
           { name: "og:type", content: "website" },
           { name: "og:url", content: "https://docs.cyberconnect.me/" },
           {
             name: "og:image",
+            content: "https://cyberconnect.me/assets/logo-black.svg",
+          },
+          // Twitter
+          { name: "twitter:title", content: "Developer Center | CyberConnect" },
+          {
+            name: "twitter:description",
+            content: "The comprehensive guide for CyberConnect protocol",
+          },
+          { name: "twitter:card", content: "summary" },
+          { name: "twitter:site", content: "@CyberConnectHQ" },
+          {
+            name: "twitter:image",
             content: "https://cyberconnect.me/assets/logo-black.svg",
           },
         ],
@@ -165,11 +182,11 @@ const config = {
     }),
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
       integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
     },
   ],
 };
