@@ -11,4 +11,4 @@ Users can also see an aggregated profile of activity that is associated with the
 ![Light.so](../../static/img/partnership/light.jpg)
 
 Light.so is built on top of CyberConnect. CyberConnect provides address connections, recommendations through the CyberConnect Indexer API. Also, users can start to follow or unfollow someone through CyberConnect JavaScript SDK.
-Together with CyberConnect, Light.so is increasingly gathering connections and building up a protential and prominent Metaverse explorer!
+Together with CyberConnect, Light.so is increasingly gathering connections and building up a potential and prominent Metaverse explorer!
