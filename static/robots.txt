@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://cyberconnect.me/sitemap-index.xml
