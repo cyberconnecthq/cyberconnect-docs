@@ -11,7 +11,7 @@ const katex = require("rehype-katex");
 const config = {
   title: "Developer Center | CyberConnect",
   tagline: "Building the composable social graph protocol for Web3",
-  url: "https://doc.cyberconnect.me",
+  url: "https://docs.cyberconnect.me",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
