@@ -1,0 +1,146 @@
+---
+id: user-identity
+title: UserIdentity
+---
+
+
+No description
+
+
+```graphql
+type UserIdentity {
+  address: String!
+  domain: String!
+  ens: String!
+  social: Social!
+  avatar: String!
+  joinTime: String!
+  followerCount(
+  namespace: String
+): Int!
+  followingCount(
+  namespace: String
+): Int!
+  followings(
+  namespace: String
+  first: Int
+  after: String
+): BasicInfoConnection!
+  followers(
+  namespace: String
+  first: Int
+  after: String
+): BasicInfoConnection!
+  friends(
+  namespace: String
+  first: Int
+  after: String
+): BasicInfoConnection!
+}
+```
+
+
+### Fields
+
+#### `address` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `domain` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `ens` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `social` ([`Social`](/docs/GraphQL/objects/social))
+
+
+
+
+#### `avatar` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `joinTime` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `followerCount` ([`Int`](/docs/GraphQL/scalars/int))
+
+
+- ##### `namespace` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `followingCount` ([`Int`](/docs/GraphQL/scalars/int))
+
+
+- ##### `namespace` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `followings` ([`BasicInfoConnection`](/docs/GraphQL/objects/basic-info-connection))
+
+
+- ##### `namespace` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+- ##### `first` ([`Int`](/docs/GraphQL/scalars/int))
+
+
+
+
+- ##### `after` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `followers` ([`BasicInfoConnection`](/docs/GraphQL/objects/basic-info-connection))
+
+
+- ##### `namespace` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+- ##### `first` ([`Int`](/docs/GraphQL/scalars/int))
+
+
+
+
+- ##### `after` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+#### `friends` ([`BasicInfoConnection`](/docs/GraphQL/objects/basic-info-connection))
+
+
+- ##### `namespace` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+- ##### `first` ([`Int`](/docs/GraphQL/scalars/int))
+
+
+
+
+- ##### `after` ([`String`](/docs/GraphQL/scalars/string))
+
+
+
+
+
+
