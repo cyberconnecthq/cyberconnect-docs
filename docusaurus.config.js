@@ -10,6 +10,7 @@ const katex = require("rehype-katex");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CyberConnect",
+  tagline: "Building the composable social graph protocol for Web3",
   url: "https://docs.cyberconnect.me",
   baseUrl: "/",
   onBrokenLinks: "throw",
