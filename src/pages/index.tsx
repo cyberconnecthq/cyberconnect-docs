@@ -5,6 +5,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
+import Head from "@docusaurus/Head";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -28,6 +29,10 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   return (
     <Layout>
+      <Head>
+        <title>Developer Center | CyberConnect</title>
+        <meta property="og:title" content="Developer Center | CyberConnect" />
+      </Head>
       <div className="homepage">
         <HomepageHeader />
         <main>

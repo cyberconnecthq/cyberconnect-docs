@@ -9,8 +9,7 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Developer Center | CyberConnect",
-  tagline: "Building the composable social graph protocol for Web3",
+  title: "CyberConnect",
   url: "https://docs.cyberconnect.me",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -44,7 +43,7 @@ const config = {
       {
         schema: "https://api.cybertino.io/connect/",
         rootPath: "./docs",
-        baseURL: "GraphQL",
+        baseURL: "graphql",
         linkRoot: "/docs",
         homepage: "./docs/graphql.md",
         loaders: {
@@ -78,7 +77,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "GraphQL/graphql",
+            docId: "graphql/graphql",
             position: "right",
             label: "API",
           },
@@ -151,34 +150,30 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      themeConfig: {
-        metadata: [
-          // OG
-          { name: "og:title", content: "Developer Center | CyberConnect" },
-          {
-            name: "og:description",
-            content: "The comprehensive guide for CyberConnect protocol",
-          },
-          { name: "og:type", content: "website" },
-          { name: "og:url", content: "https://docs.cyberconnect.me/" },
-          {
-            name: "og:image",
-            content: "https://cyberconnect.me/assets/logo-black.svg",
-          },
-          // Twitter
-          { name: "twitter:title", content: "Developer Center | CyberConnect" },
-          {
-            name: "twitter:description",
-            content: "The comprehensive guide for CyberConnect protocol",
-          },
-          { name: "twitter:card", content: "summary" },
-          { name: "twitter:site", content: "@CyberConnectHQ" },
-          {
-            name: "twitter:image",
-            content: "https://cyberconnect.me/assets/logo-black.svg",
-          },
-        ],
-      },
+      metadata: [
+        // OG
+        {
+          name: "og:description",
+          content: "The comprehensive guide for CyberConnect protocol",
+        },
+        { name: "og:type", content: "website" },
+        {
+          name: "og:image",
+          content: "https://cyberconnect.me/assets/logo-black.svg",
+        },
+        // Twitter
+        { name: "twitter:title", content: "Developer Center | CyberConnect" },
+        {
+          name: "twitter:description",
+          content: "The comprehensive guide for CyberConnect protocol",
+        },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:site", content: "@CyberConnectHQ" },
+        {
+          name: "twitter:image",
+          content: "https://cyberconnect.me/assets/logo-black.svg",
+        },
+      ],
     }),
   stylesheets: [
     {

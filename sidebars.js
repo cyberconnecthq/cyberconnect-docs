@@ -237,7 +237,7 @@ const sidebars = {
       id: "contact_us",
     },
   ],
-  ...require("./docs/GraphQL/sidebar-schema"),
+  ...require("./docs/graphql/sidebar-schema"),
 };
 
 module.exports = sidebars;
