@@ -38,7 +38,7 @@ const cyberConnect = new CyberConnect({
 - `env` - (optional) Env decides the endpoints. Now we have staging and production. (The default value is Env.Production).
 - `chain` - (optional) The blockchain you want to connect with. Now we support Ethereum and Solana. (The default is Blockchain.ETH).
 - `provider` - The corresponding provider of the given chain.
-- signingMessageEntity - (optional) Use to describe the entity users sign their message with. Users will see it when authorizing in the wallet `I authorize ${signingMessageEntity} from this device using signing key`. The default entity is CyberConnect.
+- `signingMessageEntity` - (optional) Use to describe the entity users sign their message with. Users will see it when authorizing in the wallet `I authorize ${signingMessageEntity} from this device using signing key`. The default entity is CyberConnect.
 
 **Connect**
 
